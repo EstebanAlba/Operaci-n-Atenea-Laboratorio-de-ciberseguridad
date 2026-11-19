@@ -1,0 +1,32 @@
+Portal: http://192.168.56.10
+
+ 1. [OK] esperado 200, obtenido 200 - investigador07 inicia sesion
+ 2. [OK] esperado 200, obtenido 200 - investigador07 lee un documento de su proyecto P01
+ 3. [OK] esperado 403, obtenido 403 - HORIZONTAL: investigador07 lee un documento del proyecto P02
+ 4. [OK] esperado 403, obtenido 403 - VERTICAL: investigador07 intenta darse el rol director
+ 5. [OK] esperado 403, obtenido 403 - VERTICAL: investigador07 intenta ver los registros de auditoria
+ 6. [OK] esperado 401, obtenido 401 - admin01 sin segundo factor
+ 7. [OK] esperado 200, obtenido 200 - admin01 con segundo factor
+ 8. [OK] esperado 403, obtenido 403 - MINIMO PRIVILEGIO: admin01 intenta leer un documento de investigacion
+ 9. [OK] esperado 200, obtenido 200 - externo01 inicia sesion y lee P01
+10. [OK] esperado 200, obtenido 200 - director01 revoca a externo01 por fin del proyecto
+11. [OK] esperado 401, obtenido 401 - RETO: externo01 reutiliza su sesion activa
+12. [OK] esperado 403, obtenido 403 - RETO: externo01 intenta iniciar una sesion nueva
+13. [OK] esperado 200, obtenido 200 - investigador07 cierra sesion
+14. [OK] esperado 401, obtenido 401 - investigador07 reutiliza el token despues de cerrar sesion
+15. [OK] esperado 401, obtenido 401 - token alterado
+16. [OK] esperado 200, obtenido 200 - admin01 consulta los ultimos registros
+
+16 de 16 casos con el resultado esperado
+
+Ultimos registros del portal (sin contrasenas, tokens ni codigos MFA):
+  2026-11-19T00:40:38-05:00,LOGIN_OK,externo01,192.168.56.12,,externo,,,permitido,,,,97f2e03a
+  2026-11-19T00:40:38-05:00,READ,externo01,192.168.56.12,,externo,resumen_P01.txt,,permitido,leer,P01/resumen_P01.txt,,97f2e03a
+  2026-11-19T00:40:38-05:00,LOGIN_OK,director01,192.168.56.12,,director,,,permitido,,,,509da43d
+  2026-11-19T00:40:38-05:00,ACCESS_REVOKED,director01,192.168.56.12,,director,,,permitido,revocar_acceso,usuarios/externo01,fin del proyecto; 1 sesiones cerradas,509da43d
+  2026-11-19T00:40:38-05:00,SESSION_REJECTED,(sin sesion),192.168.56.12,,,,,denegado,,/proyectos/P01/documentos/resumen_P01.txt,token desconocido o revocado,
+  2026-11-19T00:40:38-05:00,LOGIN_FAIL,externo01,192.168.56.12,,,,,denegado,,,acceso vencido (fin del proyecto o del convenio),
+  2026-11-19T00:40:38-05:00,LOGOUT,investigador07,192.168.56.12,,investigador,,,permitido,cerrar_sesion,/sesion,,a80b89f2
+  2026-11-19T00:40:38-05:00,SESSION_REJECTED,(sin sesion),192.168.56.12,,,,,denegado,,/proyectos/P01/documentos,token desconocido o revocado,
+  2026-11-19T00:40:38-05:00,SESSION_REJECTED,(sin sesion),192.168.56.12,,,,,denegado,,/proyectos/P01/documentos,token desconocido o revocado,
+  2026-11-19T00:40:38-05:00,AUDIT_READ,admin01,192.168.56.12,,administrador,,,permitido,ver_registros,registros,,ca172594

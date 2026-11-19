@@ -1,0 +1,2 @@
+fecha,regla,nombre_regla,usuario,confianza,puntaje,eventos_soporte,motivos
+2026-10-20T14:00:00-05:00,R2,Descarga de gran volumen,investigador05,Baja,0,L7 14:00 DOWNLOAD ip=? dataset_P02_completo.zip 650 MB,base R2 (+1); datos incompletos en los eventos de soporte (IP o zona horaria) (-1)

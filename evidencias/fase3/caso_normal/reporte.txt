@@ -1,0 +1,8 @@
+Archivo: caso_normal.csv
+SHA-256: 02c00214eafa09f39b019293b69eb6dba6687a33f9f8fde53db4b90b4ba49063
+Filas validas: 11 | descartadas: 0 | con zona horaria asumida: 0
+
+Sin alertas.
+
+Total: 0 alertas (Alta: 0, Media: 0, Baja: 0)
+Las alertas senalan patrones a investigar; no demuestran filtracion, intencion ni autoria.

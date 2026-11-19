@@ -1,0 +1,15 @@
+timestamp,event,user,src_ip,actor,role,file,size_mb
+2026-10-12T08:50:00-05:00,LOGIN_OK,investigador15,10.1.2.20,,,,
+2026-10-12T09:30:00-05:00,DOWNLOAD,investigador15,10.1.2.20,,,notas_P07.pdf,8
+2026-10-13T08:45:00-05:00,LOGIN_OK,investigador15,10.1.2.20,,,,
+2026-10-13T10:05:00-05:00,DOWNLOAD,investigador15,10.1.2.20,,,figuras_P07.zip,95
+2026-10-15T02:10:00-05:00,LOGIN_FAIL,investigador15,203.0.113.45,,,,
+2026-10-15T02:11:00-05:00,LOGIN_FAIL,investigador15,203.0.113.45,,,,
+2026-10-15T02:12:00-05:00,LOGIN_FAIL,investigador15,203.0.113.45,,,,
+2026-10-15T02:13:00-05:00,LOGIN_FAIL,investigador15,203.0.113.45,,,,
+2026-10-15T02:14:00-05:00,LOGIN_FAIL,investigador15,203.0.113.45,,,,
+2026-10-15T02:15:00-05:00,LOGIN_FAIL,investigador15,203.0.113.45,,,,
+2026-10-15T02:16:00-05:00,LOGIN_OK,investigador15,203.0.113.45,,,,
+2026-10-15T02:18:00-05:00,ROLE_CHANGE,investigador15,,,editor,,
+2026-10-15T02:24:00-05:00,DOWNLOAD,investigador15,203.0.113.45,,,resultados_P07.zip,720
+2026-10-15T02:27:00-05:00,DOWNLOAD,investigador15,203.0.113.45,,,modelo_P07.bin,910

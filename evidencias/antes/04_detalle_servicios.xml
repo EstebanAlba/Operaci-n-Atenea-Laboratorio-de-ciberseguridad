@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Thu Nov 19 02:46:52 2026 as: nmap -sT -sV -p 22,80 -&#45;script http-title,http-headers,http-methods,ssh-hostkey,ssh2-enum-algos -oN 04_detalle_servicios.txt -oX 04_detalle_servicios.xml 192.168.56.10 192.168.56.11 -->
+<nmaprun scanner="nmap" args="nmap -sT -sV -p 22,80 -&#45;script http-title,http-headers,http-methods,ssh-hostkey,ssh2-enum-algos -oN 04_detalle_servicios.txt -oX 04_detalle_servicios.xml 192.168.56.10 192.168.56.11" start="1795056412" startstr="Thu Nov 19 02:46:52 2026" version="7.95" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="22,80"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.11" addrtype="ipv4"/>
+<address addr="DE:1A:A3:F1:39:DF" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.10" addrtype="ipv4"/>
+<address addr="FA:09:6D:92:DA:0C" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1795056412" endtime="1795056418"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.10" addrtype="ipv4"/>
+<address addr="FA:09:6D:92:DA:0C" addrtype="mac"/>
+<hostnames>
+<hostname name="atenea-portal.atenea-lab_lab" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Uvicorn" method="probed" conf="10"><cpe>cpe:/a:encode:uvicorn</cpe></service><script id="http-server-header" output="uvicorn"><elem>uvicorn</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: GET"><table key="Supported Methods">
+<elem>GET</elem>
+</table>
+</script><script id="http-title" output="Site doesn&apos;t have a title (application/json)."></script><script id="http-headers" output="&#xa;  date: Thu, 19 Nov 2026 02:46:58 GMT&#xa;  server: uvicorn&#xa;  content-length: 91&#xa;  content-type: application/json&#xa;  Connection: close&#xa;  &#xa;  (Request type: GET)&#xa;"/></port>
+</ports>
+<times srtt="35" rttvar="2852" to="100000"/>
+</host>
+<host starttime="1795056412" endtime="1795056418"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.11" addrtype="ipv4"/>
+<address addr="DE:1A:A3:F1:39:DF" addrtype="mac"/>
+<hostnames>
+<hostname name="atenea-repositorio.atenea-lab_lab" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="9.7" extrainfo="protocol 2.0" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:9.7</cpe></service><script id="ssh2-enum-algos" output="&#xa;  kex_algorithms: (12)&#xa;      sntrup761x25519-sha512@openssh.com&#xa;      curve25519-sha256&#xa;      curve25519-sha256@libssh.org&#xa;      ecdh-sha2-nistp256&#xa;      ecdh-sha2-nistp384&#xa;      ecdh-sha2-nistp521&#xa;      diffie-hellman-group-exchange-sha256&#xa;      diffie-hellman-group16-sha512&#xa;      diffie-hellman-group18-sha512&#xa;      diffie-hellman-group14-sha256&#xa;      ext-info-s&#xa;      kex-strict-s-v00@openssh.com&#xa;  server_host_key_algorithms: (4)&#xa;      rsa-sha2-512&#xa;      rsa-sha2-256&#xa;      ecdsa-sha2-nistp256&#xa;      ssh-ed25519&#xa;  encryption_algorithms: (6)&#xa;      chacha20-poly1305@openssh.com&#xa;      aes128-ctr&#xa;      aes192-ctr&#xa;      aes256-ctr&#xa;      aes128-gcm@openssh.com&#xa;      aes256-gcm@openssh.com&#xa;  mac_algorithms: (10)&#xa;      umac-64-etm@openssh.com&#xa;      umac-128-etm@openssh.com&#xa;      hmac-sha2-256-etm@openssh.com&#xa;      hmac-sha2-512-etm@openssh.com&#xa;      hmac-sha1-etm@openssh.com&#xa;      umac-64@openssh.com&#xa;      umac-128@openssh.com&#xa;      hmac-sha2-256&#xa;      hmac-sha2-512&#xa;      hmac-sha1&#xa;  compression_algorithms: (2)&#xa;      none&#xa;      zlib@openssh.com"><table key="kex_algorithms">
+<elem>sntrup761x25519-sha512@openssh.com</elem>
+<elem>curve25519-sha256</elem>
+<elem>curve25519-sha256@libssh.org</elem>
+<elem>ecdh-sha2-nistp256</elem>
+<elem>ecdh-sha2-nistp384</elem>
+<elem>ecdh-sha2-nistp521</elem>
+<elem>diffie-hellman-group-exchange-sha256</elem>
+<elem>diffie-hellman-group16-sha512</elem>
+<elem>diffie-hellman-group18-sha512</elem>
+<elem>diffie-hellman-group14-sha256</elem>
+<elem>ext-info-s</elem>
+<elem>kex-strict-s-v00@openssh.com</elem>
+</table>
+<table key="server_host_key_algorithms">
+<elem>rsa-sha2-512</elem>
+<elem>rsa-sha2-256</elem>
+<elem>ecdsa-sha2-nistp256</elem>
+<elem>ssh-ed25519</elem>
+</table>
+<table key="encryption_algorithms">
+<elem>chacha20-poly1305@openssh.com</elem>
+<elem>aes128-ctr</elem>
+<elem>aes192-ctr</elem>
+<elem>aes256-ctr</elem>
+<elem>aes128-gcm@openssh.com</elem>
+<elem>aes256-gcm@openssh.com</elem>
+</table>
+<table key="mac_algorithms">
+<elem>umac-64-etm@openssh.com</elem>
+<elem>umac-128-etm@openssh.com</elem>
+<elem>hmac-sha2-256-etm@openssh.com</elem>
+<elem>hmac-sha2-512-etm@openssh.com</elem>
+<elem>hmac-sha1-etm@openssh.com</elem>
+<elem>umac-64@openssh.com</elem>
+<elem>umac-128@openssh.com</elem>
+<elem>hmac-sha2-256</elem>
+<elem>hmac-sha2-512</elem>
+<elem>hmac-sha1</elem>
+</table>
+<table key="compression_algorithms">
+<elem>none</elem>
+<elem>zlib@openssh.com</elem>
+</table>
+</script><script id="ssh-hostkey" output="&#xa;  256 fe:57:11:48:cd:67:c9:23:e3:7d:97:ae:43:cb:79:f9 (ECDSA)&#xa;  256 a4:d5:5d:d5:2e:b4:44:3b:36:35:66:f3:1c:9d:80:85 (ED25519)"><table>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="fingerprint">fe571148cd67c923e37d97ae43cb79f9</elem>
+<elem key="bits">256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCtKn1hJcgonT98NDmg4boQIlOOK8G6d8f6legDA5wnM14CGfvJsRVJ6Zvp1glIPupgQ3eIl7BzWrTkdHeYsAIA=</elem>
+</table>
+<table>
+<elem key="type">ssh-ed25519</elem>
+<elem key="fingerprint">a4d55dd52eb4443b363566f31c9d8085</elem>
+<elem key="bits">256</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIIEyLEIhawYOJW5Mki3h+eG4BzL6/FozO6vAdfTrh1Z7</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.24.0" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.24.0</cpe></service><script id="http-title" output="Index of /"><elem key="title">Index of /</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+</script><script id="http-server-header" output="nginx/1.24.0"><elem>nginx/1.24.0</elem>
+</script><script id="http-headers" output="&#xa;  Server: nginx/1.24.0&#xa;  Date: Thu, 19 Nov 2026 02:46:58 GMT&#xa;  Content-Type: text/html&#xa;  Connection: close&#xa;  &#xa;  (Request type: HEAD)&#xa;"/></port>
+</ports>
+<times srtt="125" rttvar="2883" to="100000"/>
+</host>
+<runstats><finished time="1795056418" timestr="Thu Nov 19 02:46:58 2026" summary="Nmap done at Thu Nov 19 02:46:58 2026; 2 IP addresses (2 hosts up) scanned in 6.41 seconds" elapsed="6.41" exit="success"/><hosts up="2" down="0" total="2"/>
+</runstats>
+</nmaprun>

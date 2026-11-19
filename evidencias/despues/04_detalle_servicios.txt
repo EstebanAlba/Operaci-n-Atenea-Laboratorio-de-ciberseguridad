@@ -1,0 +1,85 @@
+# Nmap 7.95 scan initiated Thu Nov 19 02:48:59 2026 as: nmap -sT -sV -p 22,80 --script http-title,http-headers,http-methods,ssh-hostkey,ssh2-enum-algos -oN 04_detalle_servicios.txt -oX 04_detalle_servicios.xml 192.168.56.10 192.168.56.11
+Nmap scan report for atenea-portal.atenea-lab_lab (192.168.56.10)
+Host is up (0.000025s latency).
+
+PORT   STATE  SERVICE VERSION
+22/tcp closed ssh
+80/tcp open   http    Uvicorn
+| http-methods: 
+|_  Supported Methods: GET
+|_http-server-header: uvicorn
+|_http-title: Site doesn't have a title (application/json).
+| http-headers: 
+|   date: Thu, 19 Nov 2026 02:49:05 GMT
+|   server: uvicorn
+|   content-length: 91
+|   content-type: application/json
+|   Connection: close
+|   
+|_  (Request type: GET)
+MAC Address: FA:09:6D:92:DA:0C (Unknown)
+
+Nmap scan report for atenea-repositorio.atenea-lab_lab (192.168.56.11)
+Host is up (0.000074s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.7 (protocol 2.0)
+| ssh2-enum-algos: 
+|   kex_algorithms: (12)
+|       sntrup761x25519-sha512@openssh.com
+|       curve25519-sha256
+|       curve25519-sha256@libssh.org
+|       ecdh-sha2-nistp256
+|       ecdh-sha2-nistp384
+|       ecdh-sha2-nistp521
+|       diffie-hellman-group-exchange-sha256
+|       diffie-hellman-group16-sha512
+|       diffie-hellman-group18-sha512
+|       diffie-hellman-group14-sha256
+|       ext-info-s
+|       kex-strict-s-v00@openssh.com
+|   server_host_key_algorithms: (4)
+|       rsa-sha2-512
+|       rsa-sha2-256
+|       ecdsa-sha2-nistp256
+|       ssh-ed25519
+|   encryption_algorithms: (6)
+|       chacha20-poly1305@openssh.com
+|       aes128-ctr
+|       aes192-ctr
+|       aes256-ctr
+|       aes128-gcm@openssh.com
+|       aes256-gcm@openssh.com
+|   mac_algorithms: (10)
+|       umac-64-etm@openssh.com
+|       umac-128-etm@openssh.com
+|       hmac-sha2-256-etm@openssh.com
+|       hmac-sha2-512-etm@openssh.com
+|       hmac-sha1-etm@openssh.com
+|       umac-64@openssh.com
+|       umac-128@openssh.com
+|       hmac-sha2-256
+|       hmac-sha2-512
+|       hmac-sha1
+|   compression_algorithms: (2)
+|       none
+|_      zlib@openssh.com
+| ssh-hostkey: 
+|   256 fe:57:11:48:cd:67:c9:23:e3:7d:97:ae:43:cb:79:f9 (ECDSA)
+|_  256 a4:d5:5d:d5:2e:b4:44:3b:36:35:66:f3:1c:9d:80:85 (ED25519)
+80/tcp open  http    nginx
+| http-methods: 
+|_  Supported Methods: GET HEAD POST
+| http-headers: 
+|   Server: nginx
+|   Date: Thu, 19 Nov 2026 02:49:05 GMT
+|   Content-Type: text/html
+|   Content-Length: 146
+|   Connection: close
+|   
+|_  (Request type: GET)
+|_http-title: 403 Forbidden
+MAC Address: 3A:21:24:5C:9C:6B (Unknown)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Nov 19 02:49:06 2026 -- 2 IP addresses (2 hosts up) scanned in 6.40 seconds

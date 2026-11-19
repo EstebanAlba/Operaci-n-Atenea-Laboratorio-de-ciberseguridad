@@ -1,0 +1,4 @@
+linea,fecha_hora,zona_asumida,usuario,activo,evento,resultado,detalle
+2,2026-10-20T13:50:00-05:00,no,investigador05,AUTH-01,LOGIN_OK,exitoso,L2 13:50 LOGIN_OK ip=10.1.2.17
+7,2026-10-20T14:00:00-05:00,si,investigador05,REPO-01,DOWNLOAD,exitoso,L7 14:00 DOWNLOAD ip=? dataset_P02_completo.zip 650 MB
+8,2026-10-20T14:05:00-05:00,no,investigador05,AUTH-01,LOGIN_FAIL,fallido,L8 14:05 LOGIN_FAIL ip=?

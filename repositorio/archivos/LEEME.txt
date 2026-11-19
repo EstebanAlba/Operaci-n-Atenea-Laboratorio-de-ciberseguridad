@@ -1,0 +1,2 @@
+Repositorio de laboratorio del Centro Atenea de Innovacion (ficticio).
+Todos los archivos son sinteticos y no contienen datos reales.

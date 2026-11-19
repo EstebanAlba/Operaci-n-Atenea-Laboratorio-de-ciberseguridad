@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Thu Nov 19 02:48:49 2026 as: nmap -sn -oN 01_descubrimiento.txt -oX 01_descubrimiento.xml 192.168.56.0/24 -->
+<nmaprun scanner="nmap" args="nmap -sn -oN 01_descubrimiento.txt -oX 01_descubrimiento.xml 192.168.56.0/24" start="1795056529" startstr="Thu Nov 19 02:48:49 2026" version="7.95" xmloutputversion="1.05">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.1" addrtype="ipv4"/>
+<address addr="56:53:8E:0F:96:68" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="104" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.10" addrtype="ipv4"/>
+<address addr="FA:09:6D:92:DA:0C" addrtype="mac"/>
+<hostnames>
+<hostname name="atenea-portal.atenea-lab_lab" type="PTR"/>
+</hostnames>
+<times srtt="29" rttvar="2848" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.11" addrtype="ipv4"/>
+<address addr="3A:21:24:5C:9C:6B" addrtype="mac"/>
+<hostnames>
+<hostname name="atenea-repositorio.atenea-lab_lab" type="PTR"/>
+</hostnames>
+<times srtt="30" rttvar="2136" to="100000"/>
+</host>
+<host><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="192.168.56.12" addrtype="ipv4"/>
+<hostnames>
+<hostname name="f7e627ffbf86" type="PTR"/>
+</hostnames>
+</host>
+<runstats><finished time="1795056530" timestr="Thu Nov 19 02:48:50 2026" summary="Nmap done at Thu Nov 19 02:48:50 2026; 256 IP addresses (4 hosts up) scanned in 1.91 seconds" elapsed="1.91" exit="success"/><hosts up="4" down="252" total="256"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,12 @@
+timestamp,event,user,src_ip,actor,role,file,size_mb
+2026-10-12T08:05:00-05:00,LOGIN_FAIL,investigador03,10.1.2.14,,,,
+2026-10-12T08:06:00-05:00,LOGIN_OK,investigador03,10.1.2.14,,,,
+2026-10-12T08:30:00-05:00,DOWNLOAD,investigador03,10.1.2.14,,,informe_avance.pdf,12
+2026-10-12T11:15:00-05:00,FILE_UPDATE,investigador03,10.1.2.14,,,borrador_P03.docx,
+2026-10-13T09:00:00-05:00,ROLE_CHANGE,investigador03,,admin01,editor,,
+2026-10-13T09:02:00-05:00,LOGIN_OK,auxiliar04,10.1.2.31,,,,
+2026-10-13T09:40:00-05:00,DOWNLOAD,auxiliar04,10.1.2.31,,,muestra_P03.csv,45
+2026-10-13T11:20:00-05:00,LOGIN_OK,investigador03,10.1.2.14,,,,
+2026-10-13T11:25:00-05:00,DOWNLOAD,investigador03,10.1.2.14,,,dataset_P03.zip,310
+2026-10-14T10:10:00-05:00,LOGIN_OK,investigador03,10.1.2.14,,,,
+2026-10-14T10:30:00-05:00,FILE_UPDATE,investigador03,10.1.2.14,,,resultados_P03.csv,

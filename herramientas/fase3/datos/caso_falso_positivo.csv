@@ -1,0 +1,12 @@
+timestamp,event,user,src_ip,actor,role,file,size_mb
+2026-10-06T09:55:00-05:00,LOGIN_OK,investigador12,10.1.2.30,,,,
+2026-10-06T10:00:00-05:00,DOWNLOAD,investigador12,10.1.2.30,,,imagenes_lote1.zip,800
+2026-10-08T09:50:00-05:00,LOGIN_OK,investigador12,10.1.2.30,,,,
+2026-10-08T10:00:00-05:00,DOWNLOAD,investigador12,10.1.2.30,,,imagenes_lote2.zip,780
+2026-10-12T09:58:00-05:00,LOGIN_OK,investigador12,10.1.2.30,,,,
+2026-10-12T10:00:00-05:00,DOWNLOAD,investigador12,10.1.2.30,,,imagenes_lote3.zip,820
+2026-10-14T14:55:00-05:00,LOGIN_OK,investigador12,10.1.2.30,,,,
+2026-10-14T15:00:00-05:00,DOWNLOAD,investigador12,10.1.2.30,,,imagenes_lote4.zip,900
+2026-10-14T09:55:00-05:00,LOGIN_OK,investigador20,10.1.2.41,,,,
+2026-10-14T10:00:00-05:00,ROLE_CHANGE,investigador20,,admin02,editor,,
+2026-10-14T10:10:00-05:00,DOWNLOAD,investigador20,10.1.2.41,,,protocolo_P11.pdf,200

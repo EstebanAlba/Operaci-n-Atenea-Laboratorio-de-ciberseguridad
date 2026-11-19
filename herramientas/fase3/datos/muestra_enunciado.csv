@@ -1,0 +1,8 @@
+timestamp,event,user,src_ip,actor,role,file,size_mb
+2026-10-14T21:04:00-05:00,LOGIN_FAIL,investigador07,10.1.2.8,,,,
+2026-10-14T21:05:00-05:00,LOGIN_FAIL,investigador07,10.1.2.8,,,,
+2026-10-14T21:06:00-05:00,LOGIN_OK,investigador07,10.1.2.8,,,,
+2026-10-14T21:08:00-05:00,ROLE_CHANGE,investigador07,,,editor,,
+2026-10-14T21:12:00-05:00,DOWNLOAD,investigador07,,,,dataset_A.zip,620
+2026-10-14T21:13:00-05:00,DOWNLOAD,investigador07,,,,model_B.bin,280
+2026-10-14T21:20:00-05:00,FILE_UPDATE,investigador09,,,,resultados.csv,

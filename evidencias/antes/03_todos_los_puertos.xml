@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Thu Nov 19 02:46:49 2026 as: nmap -sT -p- -&#45;min-rate 500 -oN 03_todos_los_puertos.txt -oX 03_todos_los_puertos.xml 192.168.56.10 192.168.56.11 -->
+<nmaprun scanner="nmap" args="nmap -sT -p- -&#45;min-rate 500 -oN 03_todos_los_puertos.txt -oX 03_todos_los_puertos.xml 192.168.56.10 192.168.56.11" start="1795056409" startstr="Thu Nov 19 02:46:49 2026" version="7.95" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.11" addrtype="ipv4"/>
+<address addr="DE:1A:A3:F1:39:DF" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.10" addrtype="ipv4"/>
+<address addr="FA:09:6D:92:DA:0C" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1795056409" endtime="1795056411"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.10" addrtype="ipv4"/>
+<address addr="FA:09:6D:92:DA:0C" addrtype="mac"/>
+<hostnames>
+<hostname name="atenea-portal.atenea-lab_lab" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65534">
+<extrareasons reason="conn-refused" count="65534" proto="tcp" ports="1-79,81-65535"/>
+</extraports>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+</ports>
+<times srtt="180" rttvar="167" to="100000"/>
+</host>
+<host starttime="1795056409" endtime="1795056411"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.56.11" addrtype="ipv4"/>
+<address addr="DE:1A:A3:F1:39:DF" addrtype="mac"/>
+<hostnames>
+<hostname name="atenea-repositorio.atenea-lab_lab" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65533">
+<extrareasons reason="conn-refused" count="65533" proto="tcp" ports="1-21,23-79,81-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+</ports>
+<times srtt="194" rttvar="167" to="100000"/>
+</host>
+<runstats><finished time="1795056412" timestr="Thu Nov 19 02:46:52 2026" summary="Nmap done at Thu Nov 19 02:46:52 2026; 2 IP addresses (2 hosts up) scanned in 2.31 seconds" elapsed="2.31" exit="success"/><hosts up="2" down="0" total="2"/>
+</runstats>
+</nmaprun>

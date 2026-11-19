@@ -1,0 +1,6 @@
+# REPO-01 SSH - configuracion inicial (antes del plan de cierre)
+Port 22
+PermitRootLogin no
+PasswordAuthentication yes
+KbdInteractiveAuthentication no
+Subsystem sftp internal-sftp

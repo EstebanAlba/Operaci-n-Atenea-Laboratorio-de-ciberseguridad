@@ -1,0 +1,17 @@
+# Nmap 7.95 scan initiated Thu Nov 19 02:46:49 2026 as: nmap -sT -p- --min-rate 500 -oN 03_todos_los_puertos.txt -oX 03_todos_los_puertos.xml 192.168.56.10 192.168.56.11
+Nmap scan report for atenea-portal.atenea-lab_lab (192.168.56.10)
+Host is up (0.00018s latency).
+Not shown: 65534 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+80/tcp open  http
+MAC Address: FA:09:6D:92:DA:0C (Unknown)
+
+Nmap scan report for atenea-repositorio.atenea-lab_lab (192.168.56.11)
+Host is up (0.00019s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+MAC Address: DE:1A:A3:F1:39:DF (Unknown)
+
+# Nmap done at Thu Nov 19 02:46:52 2026 -- 2 IP addresses (2 hosts up) scanned in 2.31 seconds

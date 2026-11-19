@@ -1,0 +1,12 @@
+linea,fecha_hora,zona_asumida,usuario,activo,evento,resultado,detalle
+2,2026-10-12T08:05:00-05:00,no,investigador03,AUTH-01,LOGIN_FAIL,fallido,L2 08:05 LOGIN_FAIL ip=10.1.2.14
+3,2026-10-12T08:06:00-05:00,no,investigador03,AUTH-01,LOGIN_OK,exitoso,L3 08:06 LOGIN_OK ip=10.1.2.14
+4,2026-10-12T08:30:00-05:00,no,investigador03,REPO-01,DOWNLOAD,exitoso,L4 08:30 DOWNLOAD ip=10.1.2.14 informe_avance.pdf 12 MB
+5,2026-10-12T11:15:00-05:00,no,investigador03,REPO-01,FILE_UPDATE,exitoso,L5 11:15 FILE_UPDATE ip=10.1.2.14 borrador_P03.docx
+6,2026-10-13T09:00:00-05:00,no,investigador03,AUTH-01,ROLE_CHANGE,exitoso,L6 09:00 ROLE_CHANGE ip=? rol=editor aprobador=admin01
+7,2026-10-13T09:02:00-05:00,no,auxiliar04,AUTH-01,LOGIN_OK,exitoso,L7 09:02 LOGIN_OK ip=10.1.2.31
+8,2026-10-13T09:40:00-05:00,no,auxiliar04,REPO-01,DOWNLOAD,exitoso,L8 09:40 DOWNLOAD ip=10.1.2.31 muestra_P03.csv 45 MB
+9,2026-10-13T11:20:00-05:00,no,investigador03,AUTH-01,LOGIN_OK,exitoso,L9 11:20 LOGIN_OK ip=10.1.2.14
+10,2026-10-13T11:25:00-05:00,no,investigador03,REPO-01,DOWNLOAD,exitoso,L10 11:25 DOWNLOAD ip=10.1.2.14 dataset_P03.zip 310 MB
+11,2026-10-14T10:10:00-05:00,no,investigador03,AUTH-01,LOGIN_OK,exitoso,L11 10:10 LOGIN_OK ip=10.1.2.14
+12,2026-10-14T10:30:00-05:00,no,investigador03,REPO-01,FILE_UPDATE,exitoso,L12 10:30 FILE_UPDATE ip=10.1.2.14 resultados_P03.csv

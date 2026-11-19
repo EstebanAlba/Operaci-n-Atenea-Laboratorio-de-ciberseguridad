@@ -1,0 +1,14 @@
+Archivo: caso_incompleto.csv
+SHA-256: 6fca3670a0112a832facda2339a9be11e0d6a72d0656f70bd3a0bb0765faa30d
+Filas validas: 3 | descartadas: 4 | con zona horaria asumida: 1
+
+[BAJA ] 2026-10-20T14:00:00-05:00  R2 Descarga de gran volumen - investigador05
+        soporte: L7 14:00 DOWNLOAD ip=? dataset_P02_completo.zip 650 MB
+        puntaje 0: base R2 (+1); datos incompletos en los eventos de soporte (IP o zona horaria) (-1)
+[DESCARTADA] linea 3: fecha u hora invalida -> 2026-10-20 25:61,LOGIN_FAIL,investigador05,10.1.2.17,,,,
+[DESCARTADA] linea 4: usuario vacio -> 2026-10-20T13:55:00-05:00,DOWNLOAD,,10.1.2.17,,,datos_P02.zip,120
+[DESCARTADA] linea 5: tipo de evento desconocido (LOGOUTX) -> 2026-10-20T13:57:00-05:00,LOGOUTX,investigador05,10.1.2.17,,,,
+[DESCARTADA] linea 6: tamano de descarga invalido -> 2026-10-20T13:58:00-05:00,DOWNLOAD,investigador05,10.1.2.17,,,datos_P02.zip,abc
+
+Total: 1 alertas (Alta: 0, Media: 0, Baja: 1)
+Las alertas senalan patrones a investigar; no demuestran filtracion, intencion ni autoria.

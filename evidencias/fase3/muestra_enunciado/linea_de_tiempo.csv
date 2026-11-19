@@ -1,0 +1,8 @@
+linea,fecha_hora,zona_asumida,usuario,activo,evento,resultado,detalle
+2,2026-10-14T21:04:00-05:00,no,investigador07,AUTH-01,LOGIN_FAIL,fallido,L2 21:04 LOGIN_FAIL ip=10.1.2.8
+3,2026-10-14T21:05:00-05:00,no,investigador07,AUTH-01,LOGIN_FAIL,fallido,L3 21:05 LOGIN_FAIL ip=10.1.2.8
+4,2026-10-14T21:06:00-05:00,no,investigador07,AUTH-01,LOGIN_OK,exitoso,L4 21:06 LOGIN_OK ip=10.1.2.8
+5,2026-10-14T21:08:00-05:00,no,investigador07,AUTH-01,ROLE_CHANGE,exitoso,L5 21:08 ROLE_CHANGE ip=? rol=editor aprobador=?
+6,2026-10-14T21:12:00-05:00,no,investigador07,REPO-01,DOWNLOAD,exitoso,L6 21:12 DOWNLOAD ip=? dataset_A.zip 620 MB
+7,2026-10-14T21:13:00-05:00,no,investigador07,REPO-01,DOWNLOAD,exitoso,L7 21:13 DOWNLOAD ip=? model_B.bin 280 MB
+8,2026-10-14T21:20:00-05:00,no,investigador09,REPO-01,FILE_UPDATE,exitoso,L8 21:20 FILE_UPDATE ip=? resultados.csv

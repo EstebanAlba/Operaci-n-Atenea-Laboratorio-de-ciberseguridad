@@ -1,0 +1,7 @@
+[OK] muestra_enunciado.csv: 2 alertas, 0 descartadas. La muestra del enunciado activa R2 y R3; R1 no, porque solo hay 2 fallos
+[OK] caso_normal.csv: 0 alertas, 0 descartadas. La actividad normal no genera alertas
+[OK] caso_ataque.csv: 4 alertas, 0 descartadas. Una toma de cuenta activa las tres reglas con confianza alta
+[OK] caso_falso_positivo.csv: 5 alertas, 0 descartadas. Las alertas de un uso habitual o aprobado quedan en confianza baja
+[OK] caso_incompleto.csv: 1 alertas, 4 descartadas. Las filas malas se descartan sin detener el analisis
+
+5 de 5 pruebas correctas

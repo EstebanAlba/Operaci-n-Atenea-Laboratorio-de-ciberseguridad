@@ -1,0 +1,10 @@
+activo,ip,puerto,servicio,version_anunciada,hallazgo,prioridad
+PORTAL-01,192.168.56.10,22,ssh,,Puerto no abierto,Informativa
+PORTAL-01,192.168.56.10,80,http,Uvicorn,Servicio HTTP sin cifrado (sin TLS),Media
+PORTAL-01,192.168.56.10,443,https,,Puerto no abierto,Informativa
+REPO-01,192.168.56.11,22,ssh,OpenSSH 9.7,Acceso administrativo SSH alcanzable desde toda la red,Alta
+REPO-01,192.168.56.11,22,ssh,OpenSSH 9.7,SSH acepta autenticacion por contrasena,Alta
+REPO-01,192.168.56.11,80,http,nginx 1.24.0,Listado de directorios habilitado: expone nombres de proyectos y archivos,Alta
+REPO-01,192.168.56.11,80,http,nginx 1.24.0,Servicio HTTP sin cifrado (sin TLS),Media
+REPO-01,192.168.56.11,80,http,nginx 1.24.0,Version del servidor anunciada (Server: nginx/1.24.0),Baja
+REPO-01,192.168.56.11,443,https,,Puerto no abierto,Informativa

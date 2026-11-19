@@ -1,0 +1,13 @@
+# Nmap 7.95 scan initiated Thu Nov 19 02:48:49 2026 as: nmap -sn -oN 01_descubrimiento.txt -oX 01_descubrimiento.xml 192.168.56.0/24
+Nmap scan report for 192.168.56.1
+Host is up (0.00010s latency).
+MAC Address: 56:53:8E:0F:96:68 (Unknown)
+Nmap scan report for atenea-portal.atenea-lab_lab (192.168.56.10)
+Host is up (0.000029s latency).
+MAC Address: FA:09:6D:92:DA:0C (Unknown)
+Nmap scan report for atenea-repositorio.atenea-lab_lab (192.168.56.11)
+Host is up (0.000030s latency).
+MAC Address: 3A:21:24:5C:9C:6B (Unknown)
+Nmap scan report for f7e627ffbf86 (192.168.56.12)
+Host is up.
+# Nmap done at Thu Nov 19 02:48:50 2026 -- 256 IP addresses (4 hosts up) scanned in 1.91 seconds

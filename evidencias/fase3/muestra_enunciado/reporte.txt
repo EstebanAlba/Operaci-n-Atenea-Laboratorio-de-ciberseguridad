@@ -1,0 +1,15 @@
+Archivo: muestra_enunciado.csv
+SHA-256: 8af074b6ede3593c3cb4e9018a8a11a4035a2224cbfa28a2459cb95511c99a0e
+Filas validas: 7 | descartadas: 0 | con zona horaria asumida: 0
+
+[ALTA ] 2026-10-14T21:08:00-05:00  R3 Cambio de rol seguido de descarga - investigador07
+        soporte: L5 21:08 ROLE_CHANGE ip=? rol=editor aprobador=?
+        soporte: L6 21:12 DOWNLOAD ip=? dataset_A.zip 620 MB
+        soporte: L7 21:13 DOWNLOAD ip=? model_B.bin 280 MB
+        puntaje 4: base R3 (+2); fuera del horario laboral (+1); otra regla activada para el mismo usuario en 60 min (+1); cambio de rol sin aprobador registrado (+1); datos incompletos en los eventos de soporte (IP o zona horaria) (-1)
+[MEDIA] 2026-10-14T21:12:00-05:00  R2 Descarga de gran volumen - investigador07
+        soporte: L6 21:12 DOWNLOAD ip=? dataset_A.zip 620 MB
+        puntaje 2: base R2 (+1); fuera del horario laboral (+1); otra regla activada para el mismo usuario en 60 min (+1); datos incompletos en los eventos de soporte (IP o zona horaria) (-1)
+
+Total: 2 alertas (Alta: 1, Media: 1, Baja: 0)
+Las alertas senalan patrones a investigar; no demuestran filtracion, intencion ni autoria.

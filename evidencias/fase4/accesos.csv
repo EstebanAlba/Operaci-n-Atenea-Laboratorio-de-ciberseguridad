@@ -1,0 +1,19 @@
+timestamp,event,user,src_ip,actor,role,file,size_mb,decision,operacion,recurso,motivo,sesion
+2026-11-19T00:40:38-05:00,LOGIN_OK,investigador07,192.168.56.12,,investigador,,,permitido,,,,a80b89f2
+2026-11-19T00:40:38-05:00,READ,investigador07,192.168.56.12,,investigador,resumen_P01.txt,,permitido,leer,P01/resumen_P01.txt,,a80b89f2
+2026-11-19T00:40:38-05:00,ACCESS_DENIED,investigador07,192.168.56.12,,investigador,,,denegado,leer,P02/muestra_P02.csv,el proyecto P02 no es del usuario,a80b89f2
+2026-11-19T00:40:38-05:00,ACCESS_DENIED,investigador07,192.168.56.12,,investigador,,,denegado,asignar_rol,usuarios/investigador07,operacion 'asignar_rol' no permitida para el rol investigador,a80b89f2
+2026-11-19T00:40:38-05:00,ACCESS_DENIED,investigador07,192.168.56.12,,investigador,,,denegado,ver_registros,registros,operacion 'ver_registros' no permitida para el rol investigador,a80b89f2
+2026-11-19T00:40:38-05:00,LOGIN_FAIL,admin01,192.168.56.12,,administrador,,,denegado,,,segundo factor ausente o invalido,
+2026-11-19T00:40:38-05:00,LOGIN_OK,admin01,192.168.56.12,,administrador,,,permitido,,,con MFA,ca172594
+2026-11-19T00:40:38-05:00,ACCESS_DENIED,admin01,192.168.56.12,,administrador,,,denegado,leer,P01/resumen_P01.txt,operacion 'leer' no permitida para el rol administrador,ca172594
+2026-11-19T00:40:38-05:00,LOGIN_OK,externo01,192.168.56.12,,externo,,,permitido,,,,97f2e03a
+2026-11-19T00:40:38-05:00,READ,externo01,192.168.56.12,,externo,resumen_P01.txt,,permitido,leer,P01/resumen_P01.txt,,97f2e03a
+2026-11-19T00:40:38-05:00,LOGIN_OK,director01,192.168.56.12,,director,,,permitido,,,,509da43d
+2026-11-19T00:40:38-05:00,ACCESS_REVOKED,director01,192.168.56.12,,director,,,permitido,revocar_acceso,usuarios/externo01,fin del proyecto; 1 sesiones cerradas,509da43d
+2026-11-19T00:40:38-05:00,SESSION_REJECTED,(sin sesion),192.168.56.12,,,,,denegado,,/proyectos/P01/documentos/resumen_P01.txt,token desconocido o revocado,
+2026-11-19T00:40:38-05:00,LOGIN_FAIL,externo01,192.168.56.12,,,,,denegado,,,acceso vencido (fin del proyecto o del convenio),
+2026-11-19T00:40:38-05:00,LOGOUT,investigador07,192.168.56.12,,investigador,,,permitido,cerrar_sesion,/sesion,,a80b89f2
+2026-11-19T00:40:38-05:00,SESSION_REJECTED,(sin sesion),192.168.56.12,,,,,denegado,,/proyectos/P01/documentos,token desconocido o revocado,
+2026-11-19T00:40:38-05:00,SESSION_REJECTED,(sin sesion),192.168.56.12,,,,,denegado,,/proyectos/P01/documentos,token desconocido o revocado,
+2026-11-19T00:40:38-05:00,AUDIT_READ,admin01,192.168.56.12,,administrador,,,permitido,ver_registros,registros,,ca172594

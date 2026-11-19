@@ -1,0 +1,9 @@
+# REPO-01 SSH - configuracion despues del plan de cierre
+# Solo llaves publicas y solo desde la estacion de administracion (192.168.56.20)
+Port 22
+PermitRootLogin no
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+PubkeyAuthentication yes
+AllowUsers admin_repo@192.168.56.20
+Subsystem sftp internal-sftp

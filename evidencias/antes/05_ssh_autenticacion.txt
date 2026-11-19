@@ -1,0 +1,13 @@
+# Nmap 7.95 scan initiated Thu Nov 19 02:46:58 2026 as: nmap -sT -p 22 --script ssh-auth-methods -oN 05_ssh_autenticacion.txt -oX 05_ssh_autenticacion.xml 192.168.56.11
+Nmap scan report for atenea-repositorio.atenea-lab_lab (192.168.56.11)
+Host is up (0.000063s latency).
+
+PORT   STATE SERVICE
+22/tcp open  ssh
+| ssh-auth-methods: 
+|   Supported authentication methods: 
+|     publickey
+|_    password
+MAC Address: DE:1A:A3:F1:39:DF (Unknown)
+
+# Nmap done at Thu Nov 19 02:46:58 2026 -- 1 IP address (1 host up) scanned in 0.16 seconds

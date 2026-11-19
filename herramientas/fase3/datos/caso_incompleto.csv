@@ -1,0 +1,8 @@
+timestamp,event,user,src_ip,actor,role,file,size_mb
+2026-10-20T13:50:00-05:00,LOGIN_OK,investigador05,10.1.2.17,,,,
+2026-10-20 25:61,LOGIN_FAIL,investigador05,10.1.2.17,,,,
+2026-10-20T13:55:00-05:00,DOWNLOAD,,10.1.2.17,,,datos_P02.zip,120
+2026-10-20T13:57:00-05:00,LOGOUTX,investigador05,10.1.2.17,,,,
+2026-10-20T13:58:00-05:00,DOWNLOAD,investigador05,10.1.2.17,,,datos_P02.zip,abc
+2026-10-20T14:00,DOWNLOAD,investigador05,,,,dataset_P02_completo.zip,650
+2026-10-20T14:05:00-05:00,LOGIN_FAIL,investigador05,,,,,

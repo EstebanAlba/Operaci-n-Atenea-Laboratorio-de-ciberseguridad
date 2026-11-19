@@ -1,0 +1,8 @@
+Archivo: /evidencias/fase4/accesos.csv
+SHA-256: ef9809878cb7785c05a0a843f7624fc8aaf14a2b257e12f949962376d21c39c1
+Filas validas: 18 | descartadas: 0 | con zona horaria asumida: 0
+
+Sin alertas.
+
+Total: 0 alertas (Alta: 0, Media: 0, Baja: 0)
+Las alertas senalan patrones a investigar; no demuestran filtracion, intencion ni autoria.
