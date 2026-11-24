@@ -1,0 +1,19 @@
+[OK] El plan vigente es coherente (responsables, criterios, dependencias y cobertura)
+[OK] El plan cubre las 17 obligaciones de la fase 7 y los 10 riesgos de la fase 6
+[OK] Las tres etapas tienen acciones y cada una tiene responsable y criterio de aceptacion
+[OK] Una accion del dia 30 que depende de una del dia 90 se detecta
+[OK] Un ciclo de dependencias se detecta
+[OK] Si se quita la accion de custodia de claves, el riesgo R10 queda sin cubrir
+[OK] Un responsable que no esta en la RACI se detecta
+[OK] El presupuesto no supera COP 35.000.000 y deja una reserva de al menos 5 % (reserva 3.200.000)
+[OK] Un presupuesto que supera el tope se detecta
+[OK] Una reserva menor al 5 % se detecta
+[OK] Cada rubro financia al menos una accion y explica su estimacion
+[OK] Hay al menos cinco indicadores con formula, meta, frecuencia y responsable
+[OK] Linea base I1: el unico cambio de rol de la muestra no tiene aprobador
+[OK] Linea base I3: umbral fijo 1/50 y reglas calibradas 7/8, calculadas con la evidencia de la fase 6
+[OK] Linea base I7: 9 de 17 obligaciones cumplidas segun el verificador de la fase 7
+[OK] Reto: ninguna accion valida depende de una recomendacion sujeta a la causa
+[OK] Reto: cada recomendacion condicionada depende de la evidencia preservada o del concepto juridico
+
+17 de 17 pruebas correctas

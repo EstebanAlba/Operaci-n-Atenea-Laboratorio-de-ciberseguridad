@@ -1,0 +1,6 @@
+  fase3/pruebas.txt                      5 de 5 pruebas correctas
+  fase4/pruebas_pytest.txt               66 passed, 1 warning in 11.80s 
+  fase5/pruebas.txt                      21 de 21 pruebas correctas
+  fase6/pruebas.txt                      17 de 17 pruebas correctas
+  fase7/pruebas.txt                      18 de 18 pruebas correctas
+  fase8/pruebas.txt                      17 de 17 pruebas correctas

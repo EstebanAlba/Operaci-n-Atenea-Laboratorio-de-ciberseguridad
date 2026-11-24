@@ -1,0 +1,8 @@
+id,indicador,linea_base,fuente,meta_90_dias
+I1,Cambios de rol sin aprobador registrado,1 de 1 (100%) en la muestra del caso,evidencias de la muestra del enunciado (fase 3),0 %
+I2,Tiempo de revocacion de acceso externo,0 s en el laboratorio; sin medicion en el centro,evidencias/fase4/accesos.csv,Menos de 24 horas
+I3,Precision de las alertas de deteccion,umbral fijo 1/50 (2%); reglas calibradas 7/8 (87.5%),evidencias/fase6/reporte_deteccion.txt,80 % o mas
+I4,Alertas de severidad alta investigadas a tiempo,0 % (nadie revisa los registros hoy); se mide desde la accion P09,caso y fase 1,100 %
+I5,Eficacia de los respaldos,0 restauraciones de prueba realizadas,caso y fase 1,100 % (3 de 3)
+I6,Cobertura de MFA en cuentas de alto impacto,100 % en el laboratorio; 0 % en el centro,evidencias/fase4/demo.txt,100 %
+I7,Obligaciones cumplidas con evidencia verificada,9 de 17; 4 en brecha,evidencias/fase7/resultado_cumplimiento.csv,14 de 17 o mas y ninguna en brecha

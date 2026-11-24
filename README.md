@@ -1,6 +1,6 @@
 # Operación Atenea – Laboratorio de ciberseguridad
 
-Código y evidencias de las fases 2 a 7 del trabajo "Operación Atenea" (Ciberseguridad, Universidad Central).
+Código y evidencias de las fases 2 a 8 del trabajo "Operación Atenea" (Ciberseguridad, Universidad Central).
 El análisis completo está en el informe técnico; este repositorio permite reproducir cada prueba.
 
 | Fase | Qué contiene | Dónde |
@@ -11,7 +11,8 @@ El análisis completo está en el informe técnico; este repositorio permite rep
 | 5. Criptografía y trazabilidad documental | Cifrado AES-256-GCM con clave envuelta, SHA-256, firmas Ed25519, mini CA ficticia, verificación de paquetes y 21 pruebas | `herramientas/fase5/` |
 | 6. Riesgos, malware y controles de detección | Registros simulados con escenarios etiquetados, reglas de descargas anómalas, modificaciones masivas y señales de malware, calibración y 17 pruebas | `herramientas/fase6/` |
 | 7. Normatividad y gobierno | Matriz de cumplimiento verificada contra las evidencias de las fases 2 a 6, matriz RACI de COBIT 5, evaluador de solicitudes de acceso y 18 pruebas | `herramientas/fase7/` |
-| Evidencias | Salidas de cada ejecución con sus hashes SHA-256 | `evidencias/antes`, `evidencias/despues`, `evidencias/fase3` a `evidencias/fase7` |
+| 8. Integración | Plan de 90 días con dependencias y criterios de aceptación, presupuesto de COP 35.000.000, indicadores con línea base calculada de las evidencias y 17 pruebas | `herramientas/fase8/` |
+| Evidencias | Salidas de cada ejecución con sus hashes SHA-256 | `evidencias/antes`, `evidencias/despues`, `evidencias/fase3` a `evidencias/fase8` |
 
 Todos los datos, cuentas y contraseñas son ficticios y solo existen dentro del laboratorio.
 
@@ -112,6 +113,14 @@ Evaluar otra solicitud de acceso:
 ```
 docker compose exec auditor python3 /herramientas/fase7/solicitud_acceso.py /herramientas/fase7/datos/solicitud_justificada.json
 ```
+
+## Fase 8 – Integración, plan de 90 días y presupuesto
+```
+docker compose exec auditor sh /herramientas/fase8/correr_fase8.sh
+```
+Valida que el plan cubra las 17 obligaciones de la fase 7 y los 10 riesgos de la fase 6, que las dependencias respeten
+las etapas de 30, 60 y 90 días y que el presupuesto no supere COP 35.000.000. Calcula la línea base de los indicadores
+con las evidencias y resume las pruebas de todas las fases. Debe ejecutarse al final. Resultados en `evidencias/fase8/`.
 
 ---
 

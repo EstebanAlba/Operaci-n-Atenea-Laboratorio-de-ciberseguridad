@@ -1,0 +1,8 @@
+id,indicador,formula,meta_90_dias,frecuencia,fuente,responsable
+I1,Cambios de rol sin aprobador registrado,"cambios de rol sin aprobador / cambios de rol",0 %,Semanal,Registros de AUTH-01 (eventos ROLE_CHANGE),Oficial de seguridad de la informacion
+I2,Tiempo de revocacion de acceso externo,"horas entre el cierre del convenio y el primer acceso rechazado",Menos de 24 horas,Por cada cierre de convenio,Registros de AUTH-01 y registro de convenios,Director de proyecto
+I3,Precision de las alertas de deteccion,"alertas sobre incidentes reales / alertas generadas",80 % o mas,Mensual,Alertas clasificadas en MON-01,Oficial de seguridad de la informacion
+I4,Alertas de severidad alta investigadas a tiempo,"alertas altas cerradas en menos de 24 horas / alertas altas",100 %,Semanal,Registro de revisiones de MON-01,Oficial de seguridad de la informacion
+I5,Eficacia de los respaldos,"restauraciones de prueba exitosas / restauraciones programadas",100 % (3 de 3),Mensual,Actas de restauracion,Coordinador de TI
+I6,Cobertura de MFA en cuentas de alto impacto,"cuentas de alto impacto con MFA / cuentas de alto impacto",100 %,Mensual,Inventario de cuentas de AUTH-01,Coordinador de TI
+I7,Obligaciones cumplidas con evidencia verificada,"obligaciones en estado cumple y consistentes / obligaciones de la matriz",14 de 17 o mas y ninguna en brecha,Trimestral,Verificador de la fase 7,Auditoria interna

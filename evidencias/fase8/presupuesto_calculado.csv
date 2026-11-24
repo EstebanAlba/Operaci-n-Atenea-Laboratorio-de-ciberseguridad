@@ -1,0 +1,9 @@
+id,rubro,total,porcentaje,acciones
+B01,"Llaves de seguridad FIDO2 para 7 administradores, 14 directores y 3 de reserva",7200000,0.206,P03
+B02,"Implementacion tecnica en el portal y el repositorio (autorizacion, sesiones, revocacion, TLS)",9000000,0.257,P04 P08
+B03,Respaldo fuera de linea: 3 discos externos de 8 TB en rotacion y una caja ignifuga,3300000,0.094,P05
+B04,Asesoria juridica en proteccion de datos y propiedad intelectual,6000000,0.171,P07 P10 P17
+B05,Centralizacion y proteccion de registros en MON-01 y puesta en marcha de las reglas de deteccion,3600000,0.103,P06 P09 P15
+B06,"Capacitacion en phishing, clasificacion y manejo de datos, con un simulacro",1500000,0.043,P13
+B07,Simulacro de ransomware y restauracion completa,1200000,0.034,P16
+,Reserva,3200000,0.091,

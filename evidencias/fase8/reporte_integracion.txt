@@ -1,0 +1,109 @@
+Plan de implementacion
+
+  Dias 1 a 30
+    P01 Designar al oficial de seguridad, al responsable de proteccion de datos y al dueno de cada repositorio, y aprobar la matriz RACI
+        Direccion del CAI | origen Fase 7 (RACI)
+        acepta si: Acta firmada por la direccion con los responsables y la RACI de 14 procesos
+    P02 Revisar los accesos de los 14 proyectos y retirar los permisos sin aprobacion del dueno y las cuentas externas con convenio vencido
+        Director de proyecto | depende de P01 | origen C02; C04; R02; R03
+        acepta si: 14 actas de revision; 0 cuentas externas activas con convenio vencido
+    P03 Activar MFA con llave fisica para administradores y directores, y con aplicacion TOTP para el acceso remoto de los investigadores
+        Coordinador de TI | origen C01; R01 | B01
+        acepta si: 100 % de las cuentas de alto impacto con MFA; un inicio de sesion sin segundo factor es rechazado
+    P04 Cerrar la exposicion del repositorio (sin listado de directorios, SSH solo con llave) y habilitar TLS en el portal y el repositorio
+        Coordinador de TI | origen C14; R09 | B02
+        acepta si: Escaneo posterior sin listado de directorios, SSH solo con publickey y HTTP redirigido a HTTPS
+    P05 Crear una copia de seguridad fuera de linea y hacer la primera restauracion de prueba
+        Coordinador de TI | origen C15; R05 | B03
+        acepta si: Acta de restauracion con hashes coincidentes entre el original y lo restaurado
+    P06 Preservar con hash y firma los registros de MON-01 del periodo de la filtracion y abrir la cadena de custodia
+        Oficial de seguridad de la informacion | depende de P01 | origen C10; R07 | B05
+        acepta si: Hashes firmados de los registros de octubre y acta de cadena de custodia
+    P07 Confirmar la naturaleza juridica del centro, su obligacion de inscribir bases de datos y la vigencia de cada convenio
+        Oficina juridica | origen C07; C13 | B04
+        acepta si: Concepto juridico escrito y registro de convenios con fecha de cierre
+
+  Dias 31 a 60
+    P08 Desplegar en el portal la autorizacion por solicitud, los roles por proyecto, las sesiones con vencimiento y la revocacion ligada al cierre del convenio
+        Coordinador de TI | depende de P02; P03; P07 | origen C01; C04; R01; R03 | B02
+        acepta si: Las pruebas de autorizacion de la fase 4 pasan contra el portal real; revocacion efectiva en menos de 24 horas
+    P09 Entregar MON-01 al oficial de seguridad, cargar las reglas de las fases 3 y 6 en modo observacion y revisar las alertas cada semana
+        Oficial de seguridad de la informacion | depende de P06 | origen C05; C16; R04; R07 | B05
+        acepta si: 4 semanas de alertas revisadas y registradas
+    P10 Aprobar la politica de tratamiento de datos y el procedimiento de respuesta a incidentes con reporte a la SIC
+        Responsable de proteccion de datos | depende de P01; P07 | origen C06; C08 | B04
+        acepta si: Politica publicada y procedimiento probado en un ejercicio de mesa
+    P11 Documentar la seudonimizacion de DATA-01 y guardar cifrada y aparte la tabla de correspondencia
+        Responsable de proteccion de datos | depende de P01 | origen C03
+        acepta si: Prueba de reidentificacion sin la tabla fallida; tabla cifrada con custodio asignado
+    P12 Designar custodios de las claves de cifrado y firma, guardarlas aparte del respaldo y definir su rotacion
+        Oficial de seguridad de la informacion | depende de P01 | origen C17; R10
+        acepta si: Inventario de claves con custodio; una rotacion de KEK probada sin recifrar los datos
+    P13 Capacitar a investigadores y administradores en phishing, clasificacion y manejo de datos, con un simulacro de phishing
+        Oficial de seguridad de la informacion | depende de P01 | origen R01; R08 | B06
+        acepta si: 90 % de asistencia y tasa de clic del simulacro medida
+
+  Dias 61 a 90
+    P14 Clasificar y etiquetar como reservados los resultados no publicados y firmar las versiones que se comparten
+        Director de proyecto | depende de P01; P12 | origen C11; C12; R06; R08
+        acepta si: 100 % de los resultados no publicados de los 14 proyectos etiquetados
+    P15 Recalibrar las reglas con los registros reales y pasarlas de observacion a alerta
+        Oficial de seguridad de la informacion | depende de P09 | origen C16; R04 | B05
+        acepta si: Precision de alertas igual o superior a 80 % en 30 dias de registros
+    P16 Simulacro de ransomware con restauracion completa desde la copia fuera de linea
+        Coordinador de TI | depende de P05 | origen C15; R05 | B07
+        acepta si: Restauracion completa documentada en un acta, dentro del tiempo objetivo
+    P17 Exigir el aval etico y el consentimiento de los proyectos con datos de salud e incluir clausulas de titularidad en los convenios
+        Oficina juridica | depende de P07; P10 | origen C09; C12 | B04
+        acepta si: Aval y consentimientos archivados para cada proyecto con datos de salud; convenios vigentes con clausula
+    P18 Auditoria interna de cierre: verificar la matriz de cumplimiento y medir los indicadores
+        Auditoria interna | depende de P08; P14; P15; P16; P17 | origen MEA02
+        acepta si: Informe de auditoria con los 7 indicadores medidos
+
+  Cobertura: 17 de 17 obligaciones de la fase 7, 10 de 10 riesgos de la fase 6
+  Plan coherente.
+
+Presupuesto (estimaciones, no cotizaciones; tope COP 35.000.000)
+  B01    7.200.000  20.6%  Llaves de seguridad FIDO2 para 7 administradores, 14 directores y 3 de reserva
+  B02    9.000.000  25.7%  Implementacion tecnica en el portal y el repositorio (autorizacion, sesiones, revocacion, TLS)
+  B03    3.300.000   9.4%  Respaldo fuera de linea: 3 discos externos de 8 TB en rotacion y una caja ignifuga
+  B04    6.000.000  17.1%  Asesoria juridica en proteccion de datos y propiedad intelectual
+  B05    3.600.000  10.3%  Centralizacion y proteccion de registros en MON-01 y puesta en marcha de las reglas de deteccion
+  B06    1.500.000   4.3%  Capacitacion en phishing, clasificacion y manejo de datos, con un simulacro
+  B07    1.200.000   3.4%  Simulacro de ransomware y restauracion completa
+        31.800.000  90.9%  Subtotal
+         3.200.000   9.1%  Reserva para imprevistos
+        35.000.000  100.0%  Total
+  Presupuesto coherente.
+
+Indicadores (linea base calculada con las evidencias)
+  I1 Cambios de rol sin aprobador registrado: cambios de rol sin aprobador / cambios de rol
+      linea base: 1 de 1 (100%) en la muestra del caso  [evidencias de la muestra del enunciado (fase 3)]
+      meta a 90 dias: 0 % | Semanal | Oficial de seguridad de la informacion
+  I2 Tiempo de revocacion de acceso externo: horas entre el cierre del convenio y el primer acceso rechazado
+      linea base: 0 s en el laboratorio; sin medicion en el centro  [evidencias/fase4/accesos.csv]
+      meta a 90 dias: Menos de 24 horas | Por cada cierre de convenio | Director de proyecto
+  I3 Precision de las alertas de deteccion: alertas sobre incidentes reales / alertas generadas
+      linea base: umbral fijo 1/50 (2%); reglas calibradas 7/8 (87.5%)  [evidencias/fase6/reporte_deteccion.txt]
+      meta a 90 dias: 80 % o mas | Mensual | Oficial de seguridad de la informacion
+  I4 Alertas de severidad alta investigadas a tiempo: alertas altas cerradas en menos de 24 horas / alertas altas
+      linea base: 0 % (nadie revisa los registros hoy); se mide desde la accion P09  [caso y fase 1]
+      meta a 90 dias: 100 % | Semanal | Oficial de seguridad de la informacion
+  I5 Eficacia de los respaldos: restauraciones de prueba exitosas / restauraciones programadas
+      linea base: 0 restauraciones de prueba realizadas  [caso y fase 1]
+      meta a 90 dias: 100 % (3 de 3) | Mensual | Coordinador de TI
+  I6 Cobertura de MFA en cuentas de alto impacto: cuentas de alto impacto con MFA / cuentas de alto impacto
+      linea base: 100 % en el laboratorio; 0 % en el centro  [evidencias/fase4/demo.txt]
+      meta a 90 dias: 100 % | Mensual | Coordinador de TI
+  I7 Obligaciones cumplidas con evidencia verificada: obligaciones en estado cumple y consistentes / obligaciones de la matriz
+      linea base: 9 de 17; 4 en brecha  [evidencias/fase7/resultado_cumplimiento.csv]
+      meta a 90 dias: 14 de 17 o mas y ninguna en brecha | Trimestral | Auditoria interna
+
+Reto: si no puede probarse la causa de la filtracion
+  Siguen siendo validas: 18 acciones (P01, P02, P03, P04, P05, P06, P07, P08, P09, P10, P11, P12, P13, P14, P15, P16, P17, P18),
+  porque reducen riesgos que existen con o sin filtracion.
+  Sujetas a investigacion adicional: 4
+    X01 Medidas disciplinarias contra las cuentas investigador07 e investigador09 -> Solo si la investigacion vincula a una persona con las acciones; la cuenta no prueba quien la uso
+    X02 Notificar a la SIC y a los titulares la violacion de datos personales -> Solo si se confirma que los fragmentos filtrados contienen datos personales
+    X03 Denuncia penal por acceso abusivo o violacion de datos personales -> Solo con evidencia preservada que sustente la conducta (Ley 1273 de 2009)
+    X04 Terminar o renegociar el convenio con la entidad colaboradora -> Solo si se demuestra que el canal de salida fue la entidad o un externo vinculado a ella

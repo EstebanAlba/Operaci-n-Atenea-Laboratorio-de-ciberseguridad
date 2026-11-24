@@ -1,0 +1,8 @@
+id,rubro,cantidad,unidad,valor_unitario,base_de_estimacion
+B01,"Llaves de seguridad FIDO2 para 7 administradores, 14 directores y 3 de reserva",24,llave,300000,"Precio de lista de una YubiKey 5 NFC (58 USD) mas envio e impuestos de importacion"
+B02,"Implementacion tecnica en el portal y el repositorio (autorizacion, sesiones, revocacion, TLS)",100,hora,90000,"Tarifa estimada de un desarrollador contratista; el esfuerzo toma como referencia el portal de la fase 4"
+B03,"Respaldo fuera de linea: 3 discos externos de 8 TB en rotacion y una caja ignifuga",1,lote,3300000,"Tres discos de alrededor de 900.000 pesos y una caja de 600.000 pesos, segun precios de retail"
+B04,"Asesoria juridica en proteccion de datos y propiedad intelectual",50,hora,120000,"Tarifa estimada de un abogado especialista; incluye politica, concepto sobre el registro, procedimiento y clausulas"
+B05,"Centralizacion y proteccion de registros en MON-01 y puesta en marcha de las reglas de deteccion",40,hora,90000,"Tarifa estimada de un analista contratista para adaptar los scripts de las fases 3, 5 y 6"
+B06,"Capacitacion en phishing, clasificacion y manejo de datos, con un simulacro",1,lote,1500000,"Tres sesiones dictadas por personal propio, materiales y una plataforma de simulacro por un mes"
+B07,"Simulacro de ransomware y restauracion completa",1,lote,1200000,"Horas extra del equipo de TI y alquiler de un equipo de restauracion por una semana"
