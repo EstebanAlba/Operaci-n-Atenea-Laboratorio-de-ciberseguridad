@@ -1,0 +1,15 @@
+{
+  "id": "SOL-002",
+  "solicitante": "investigador07",
+  "rol": "investigador",
+  "proyectos": ["P01"],
+  "finalidad": "Articulo conjunto P01-P02 sobre la validacion del modelo con una segunda poblacion",
+  "recursos": [
+    {"recurso": "P02/muestra_P02.csv", "motivo": "Comparar la distribucion de la variable de salida con la de P01"},
+    {"recurso": "P02/modelo_P02.bin", "motivo": "Ejecutar el modelo de P02 sobre los datos de P01"},
+    {"recurso": "P01/resultados.csv", "motivo": "Trabajo propio"}
+  ],
+  "operaciones": ["leer", "descargar"],
+  "dias": 120,
+  "aprobaciones": ["director02:P02/muestra_P02.csv"]
+}

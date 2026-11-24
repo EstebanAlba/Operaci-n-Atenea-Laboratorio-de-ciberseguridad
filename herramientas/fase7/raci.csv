@@ -1,0 +1,15 @@
+proceso,nombre,ambito,Direccion del CAI,Director de proyecto,Oficial de seguridad de la informacion,Responsable de proteccion de datos,Coordinador de TI,Oficina juridica,Auditoria interna
+EDM01,Asegurar el establecimiento y mantenimiento del marco de gobierno,gobierno,A,C,R,C,I,C,I
+EDM03,Asegurar la optimizacion del riesgo,gobierno,A,C,R,C,C,C,I
+EDM05,Asegurar la transparencia hacia las partes interesadas,gobierno,A,I,C,R,I,C,I
+APO01,Gestionar el marco de gestion de TI,gestion,C,I,R,C,A,I,I
+APO10,Gestionar los proveedores,gestion,I,R,C,C,C,A,I
+APO12,Gestionar el riesgo,gestion,I,R,A,C,C,C,I
+APO13,Gestionar la seguridad,gestion,I,C,A,C,R,I,I
+BAI10,Gestionar la configuracion,gestion,I,I,C,I,A/R,I,I
+DSS02,Gestionar peticiones e incidentes de servicio,gestion,I,C,A,R,R,C,I
+DSS04,Gestionar la continuidad,gestion,I,C,C,I,A/R,I,I
+DSS05,Gestionar los servicios de seguridad,gestion,I,R,A,C,R,I,I
+MEA01,"Supervisar, evaluar y valorar el rendimiento y la conformidad",supervision,I,C,A,C,C,I,R
+MEA02,"Supervisar, evaluar y valorar el sistema de control interno",auditoria,A,I,C,C,I,I,R
+MEA03,"Supervisar, evaluar y valorar la conformidad con requisitos externos",auditoria,I,I,C,R,I,A,R

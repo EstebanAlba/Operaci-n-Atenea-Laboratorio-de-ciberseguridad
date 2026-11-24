@@ -1,0 +1,20 @@
+[OK] La matriz vigente no tiene inconsistencias
+[OK] Todas las evidencias citadas existen y su hash coincide con el manifiesto de su fase
+[OK] Cada obligacion parcial o en brecha tiene accion, responsable y plazo
+[OK] La matriz relaciona al menos seis controles de ISO/IEC 27001 (tiene 30)
+[OK] La matriz distingue dato personal, dato sensible y propiedad intelectual
+[OK] Una evidencia alterada en un caracter se detecta y la obligacion queda inconsistente
+[OK] Declarar 'cumple' con una evidencia inexistente se marca como inconsistente
+[OK] La evidencia del escaneo inicial no sirve para C14: el SSH aun aceptaba contrasena
+[OK] Un responsable que no existe en la matriz RACI se marca como inconsistente
+[OK] La matriz RACI vigente cumple las reglas de COBIT 5 definidas
+[OK] RACI: dos responsables finales (A) en un proceso se detecta
+[OK] RACI: TI supervisando su propio control interno (MEA02) se detecta
+[OK] RACI: auditoria ejecutando un proceso de gestion (DSS05) pierde independencia
+[OK] Reto: 'acceso a todo' no concede ningun recurso de otro proyecto
+[OK] Reto: los recursos del propio proyecto siguen como estaban y la tabla de correspondencia se niega
+[OK] Reto: con motivo y aprobacion del director dueno se concede la version agregada, en lectura y por 90 dias
+[OK] Reto: con motivo pero sin aprobacion queda pendiente
+[OK] Reto: la aprobacion de un director de otro proyecto no vale
+
+18 de 18 pruebas correctas

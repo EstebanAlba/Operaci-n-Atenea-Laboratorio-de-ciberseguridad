@@ -1,0 +1,18 @@
+id,norma,estado,evidencia,integridad,contenido,verificacion,responsable,plazo_dias
+C01,"Ley 1581 de 2012, art. 4 lit. g y art. 17 lit. d",cumple,evidencias/fase4/pruebas_pytest.txt,hash verificado,resultado presente,consistente,Coordinador de TI,60
+C02,"Ley 1581 de 2012, art. 4 lit. f",cumple,evidencias/fase4/demo.txt,hash verificado,resultado presente,consistente,Director de proyecto,30
+C03,"Ley 1581 de 2012, art. 5, art. 6 lit. e y art. 10 lit. d",parcial,evidencias/fase5/01_cifrado.txt,hash verificado,resultado presente,consistente,Responsable de proteccion de datos,60
+C04,"Ley 1581 de 2012, art. 4 lit. h",cumple,evidencias/fase4/demo.txt,hash verificado,resultado presente,consistente,Director de proyecto,30
+C05,"Ley 1581 de 2012, art. 17 lit. d",cumple,evidencias/fase4/busqueda_secretos.txt,hash verificado,resultado presente,consistente,Oficial de seguridad de la informacion,30
+C06,"Ley 1581 de 2012, art. 17 lit. n",parcial,evidencias/fase6/pruebas.txt,hash verificado,resultado presente,consistente,Responsable de proteccion de datos,30
+C07,"Ley 1581 de 2012, art. 25; Decreto 1074 de 2015",brecha,,,,consistente,Oficina juridica,30
+C08,Decreto 1377 de 2013 (compilado en el Decreto 1074 de 2015),brecha,,,,consistente,Responsable de proteccion de datos,60
+C09,"Resolucion 8430 de 1993 del Ministerio de Salud, art. 8",brecha,,,,consistente,Director de proyecto,90
+C10,"Ley 1273 de 2009, arts. 269A y 269F",cumple,evidencias/fase5/07_firma_hashes_fase3.txt,hash verificado,resultado presente,consistente,Oficial de seguridad de la informacion,60
+C11,"Decision Andina 486 de 2000, art. 260",parcial,evidencias/fase5/verificacion_independiente.txt,hash verificado,resultado presente,consistente,Director de proyecto,60
+C12,Ley 23 de 1982 y Decision Andina 351 de 1993,cumple,evidencias/fase5/03_firma.txt,hash verificado,resultado presente,consistente,Oficina juridica,90
+C13,Convenios de colaboracion y confidencialidad,cumple,evidencias/fase4/demo.txt,hash verificado,resultado presente,consistente,Oficina juridica,30
+C14,"Ley 1581 de 2012, art. 4 lit. g",parcial,evidencias/despues/05_ssh_autenticacion.txt;evidencias/despues/04_detalle_servicios.txt,hash verificado | hash verificado,resultado presente | resultado presente,consistente,Coordinador de TI,30
+C15,"Ley 1581 de 2012, art. 17 lit. d",brecha,,,,consistente,Coordinador de TI,60
+C16,ISO/IEC 27001:2022 (buena practica),cumple,evidencias/fase6/reporte_deteccion.txt,hash verificado,resultado presente,consistente,Oficial de seguridad de la informacion,90
+C17,ISO/IEC 27001:2022 (buena practica),cumple,evidencias/fase5/06_claves_rotacion.txt,hash verificado,resultado presente,consistente,Oficial de seguridad de la informacion,60

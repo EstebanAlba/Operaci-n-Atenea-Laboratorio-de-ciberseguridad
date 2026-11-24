@@ -1,0 +1,5 @@
+2f70d0023f33bbe6cd8b15885b935aaf92b04a949e96ba5300ff4a3aa7637c5f  ./hashes_entradas.txt
+0d6c54adf668de241eb9983552124d0db8424233fffed44ac8c0513e4ac2ff12  ./pruebas.txt
+39153d59f7bf384af9fdea75b56f2f84efb01bb6fead99174ce0c49121d77b74  ./reporte_cumplimiento.txt
+af0bcb217e8cd07b9ac55316e3436295d6a18c0cda003d376af4a82bcb2d31cd  ./resultado_cumplimiento.csv
+3da8029331d21287cef38939004a6ecf2e080b40879ee49c062576063a9176df  ./solicitudes.txt

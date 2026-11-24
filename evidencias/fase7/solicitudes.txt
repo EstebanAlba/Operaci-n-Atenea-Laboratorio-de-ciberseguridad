@@ -1,0 +1,39 @@
+Solicitud SOL-001 de investigador07 (investigador, proyectos P01)
+Finalidad declarada: Productividad: tener acceso a todos los datos del centro para no esperar permisos
+Operaciones pedidas: leer, descargar; vigencia pedida: indefinida
+
+  [YA AUTORIZADO] P01/resumen_P01.txt
+      es de su proyecto; su rol ya le permite leer, descargar. La solicitud no cambia nada
+  [YA AUTORIZADO] P01/dataset_A.zip
+      es de su proyecto; su rol ya le permite leer, descargar. La solicitud no cambia nada
+  [YA AUTORIZADO] P01/resultados.csv
+      es de su proyecto; su rol ya le permite leer, descargar. La solicitud no cambia nada
+  [DENEGAR] P02/muestra_P02.csv
+      sin un motivo propio para este recurso; la productividad no es una finalidad que justifique ampliar el acceso (principio de finalidad)
+  [DENEGAR] P02/modelo_P02.bin
+      sin un motivo propio para este recurso; la productividad no es una finalidad que justifique ampliar el acceso (principio de finalidad)
+  [DENEGAR] P03/encuesta_participantes.csv
+      sin un motivo propio para este recurso; la productividad no es una finalidad que justifique ampliar el acceso (principio de finalidad)
+  [DENEGAR] P04/serie_sensores.csv
+      sin un motivo propio para este recurso; la productividad no es una finalidad que justifique ampliar el acceso (principio de finalidad)
+  [DENEGAR] DATA-01/tabla_correspondencia.csv
+      la tabla de correspondencia solo la custodia el responsable de proteccion de datos; reidentificar exige un procedimiento aparte (Ley 1581, art. 6 lit. e)
+
+Resultado: 8 recursos evaluados | denegar: 5, ya autorizado: 3
+
+Solicitud SOL-002 de investigador07 (investigador, proyectos P01)
+Finalidad declarada: Articulo conjunto P01-P02 sobre la validacion del modelo con una segunda poblacion
+Operaciones pedidas: leer, descargar; vigencia pedida: 120
+
+  [CONCEDER CON CONDICIONES] P02/muestra_P02.csv
+      motivo especifico y aprobado por director02 (necesidad legitima)
+      - vigencia de 90 dias (se pidieron 120; maximo 90)
+      - solo lectura en linea; la descarga requiere una aprobacion aparte
+      - version agregada; la seudonimizada solo si la agregada no sirve al motivo
+      - cada acceso queda registrado en MON-01 y se revisa al vencer
+  [PENDIENTE] P02/modelo_P02.bin
+      el motivo es especifico, pero falta la aprobacion de director02, director de P02
+  [YA AUTORIZADO] P01/resultados.csv
+      es de su proyecto; su rol ya le permite leer, descargar. La solicitud no cambia nada
+
+Resultado: 3 recursos evaluados | conceder con condiciones: 1, pendiente: 1, ya autorizado: 1

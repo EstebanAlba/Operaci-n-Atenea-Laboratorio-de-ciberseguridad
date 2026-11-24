@@ -1,0 +1,11 @@
+{
+  "id": "SOL-001",
+  "solicitante": "investigador07",
+  "rol": "investigador",
+  "proyectos": ["P01"],
+  "finalidad": "Productividad: tener acceso a todos los datos del centro para no esperar permisos",
+  "recursos": [{"recurso": "*", "motivo": ""}],
+  "operaciones": ["leer", "descargar"],
+  "dias": null,
+  "aprobaciones": []
+}

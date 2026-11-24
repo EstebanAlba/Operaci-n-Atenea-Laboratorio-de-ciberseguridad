@@ -1,0 +1,9 @@
+recurso,proyecto,clasificacion,tipo_dato,versiones
+P01/resumen_P01.txt,P01,interno,ninguno,original
+P01/dataset_A.zip,P01,reservado,propiedad intelectual,original
+P01/resultados.csv,P01,reservado,propiedad intelectual,original
+P02/muestra_P02.csv,P02,confidencial,dato sensible (salud),seudonimizada;agregada
+P02/modelo_P02.bin,P02,reservado,propiedad intelectual,original
+P03/encuesta_participantes.csv,P03,confidencial,dato personal,seudonimizada;agregada
+P04/serie_sensores.csv,P04,interno,ninguno,original
+DATA-01/tabla_correspondencia.csv,DATA-01,reservado,dato sensible (reidentificacion),original
