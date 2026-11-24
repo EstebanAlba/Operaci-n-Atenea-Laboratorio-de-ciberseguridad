@@ -1,0 +1,20 @@
+06 - Gestion de claves: rotacion sin recifrar los datos
+=======================================================
+
+Objetivo: Mostrar que la clave que protege el archivo puede cambiarse sin volver a cifrar los datos y sin guardarla junto a ellos.
+Datos: El archivo cifrado de la evidencia 01 (se cifra de nuevo en memoria) y dos frases ficticias de custodio.
+Procedimiento:
+  1. Se cifra el archivo con una DEK envuelta por la KEK derivada de la frase.
+  2. Se re-envuelve la DEK con una frase nueva.
+  3. Se comprueba que la frase vieja deja de servir, la nueva funciona y el archivo cifrado no cambio.
+
+Resultado:
+  Hash del archivo cifrado antes de la rotacion: d3b8748ee90aefd735284b4a8e27f5739288971f8c02fbb53da7a0ad44e48c42
+  El archivo cifrado no se modifico: hash despues = d3b8748ee90aefd735284b4a8e27f5739288971f8c02fbb53da7a0ad44e48c42 (solo cambian los metadatos).
+  DEK envuelta antes: 2ed59ad78e85bce1bca9ff8a85cccf51...  despues: a20976c2e4544c3aa98fe7f9f15c32f8...
+  Frase anterior ya no descifra: True
+  Frase nueva descifra y recupera el original: True
+  Metadatos guardados junto al archivo contienen la frase o la KEK: False
+
+Interpretacion: La rotacion de la KEK es barata (se re-envuelve una clave de 32 bytes), asi que es viable hacerla al salir un custodio o ante sospecha de exposicion.
+Limitacion: Rotar la KEK no invalida copias de la DEK que ya se hubieran robado: si la DEK se expone, hay que recifrar los datos con una DEK nueva.

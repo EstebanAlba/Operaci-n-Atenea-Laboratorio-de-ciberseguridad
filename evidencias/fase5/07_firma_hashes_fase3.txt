@@ -1,0 +1,18 @@
+07 - Firma de los hashes de los registros de la fase 3
+======================================================
+
+Objetivo: Complementar los hashes de los registros (fase 3) con una firma, de modo que alguien que los reemplace junto con sus hashes sea detectado.
+Datos: evidencias/fase3/hashes_registros.txt y el certificado ficticio de admin01 (administrador tecnologico).
+Procedimiento:
+  1. Se firma la lista de hashes de los CSV con la clave de admin01.
+  2. Se valida su certificado y la firma.
+  3. Se altera el archivo y se verifica de nuevo.
+
+Resultado:
+  Archivo firmado: evidencias/fase3/hashes_registros.txt (428 bytes, SHA-256 75e31ac37258a05030b78f758d05602d0c7d1914aaaac319a8ff7b7012f46073)
+  Certificado de admin01 valido: True
+  Firma valida sobre el archivo original: True
+  Firma valida si se agrega un caracter al archivo: False
+
+Interpretacion: La lista de hashes de la fase 3 prueba que los CSV no cambiaron respecto a esa lista; la firma hace que la lista misma no pueda reemplazarse sin la clave de admin01.
+Limitacion: Es un respaldo de integridad, no prueba de que los registros originales sean veraces: eso depende de cuando y donde se capturaron.

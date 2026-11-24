@@ -1,0 +1,13 @@
+muestra,grupo,medicion_a,medicion_b,observacion
+M001,control,12.4,0.81,sin novedad
+M002,control,12.9,0.79,sin novedad
+M003,control,11.8,0.83,sin novedad
+M004,control,13.1,0.80,sin novedad
+M005,control,12.2,0.82,sin novedad
+M006,tratamiento,15.6,0.88,respuesta alta
+M007,tratamiento,14.9,0.86,respuesta alta
+M008,tratamiento,16.2,0.90,respuesta alta
+M009,tratamiento,15.1,0.85,sin novedad
+M010,tratamiento,14.4,0.84,sin novedad
+M011,control,12.0,0.78,sin novedad
+M012,tratamiento,15.8,0.89,respuesta alta

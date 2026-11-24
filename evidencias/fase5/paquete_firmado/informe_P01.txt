@@ -1,0 +1,10 @@
+INFORME PRELIMINAR P01 - MODELOS EXPERIMENTALES (DOCUMENTO FICTICIO)
+Centro Atenea de Innovacion - uso interno, no publicar
+
+Resumen: el modelo B alcanza una precision de 0.82 sobre el conjunto de
+validacion seudonimizado (12 muestras, 2 grupos). La diferencia entre el
+grupo de tratamiento y el grupo de control es consistente en todas las
+mediciones, aunque el tamano de la muestra es pequeno.
+
+Estado: resultado reservado hasta la publicacion. Aprobado por la direccion
+del proyecto P01.

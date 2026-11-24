@@ -1,0 +1,153 @@
+01 - Cifrado autenticado AES-256-GCM con clave envuelta
+=======================================================
+
+Objetivo: Cifrar un archivo ficticio y demostrar que el descifrado solo funciona con la clave, los datos y el contexto correctos.
+Datos: datos/resultados_P01.csv (12 filas ficticias). Frase del custodio ficticia; no se imprime ni se guarda.
+Procedimiento:
+  1. Se genera una clave de datos (DEK) aleatoria de 256 bits y se cifra el archivo con AES-GCM, ligando el contexto (proyecto y nombre) como dato asociado.
+  2. Se deriva una clave de envoltura (KEK) con scrypt a partir de la frase del custodio y se usa para cifrar la DEK.
+  3. Se guarda el cifrado (.enc) y los metadatos (.json) con la DEK envuelta; la KEK y la frase no se guardan.
+  4. Se intenta descifrar en cinco condiciones: correcta, bit alterado, frase incorrecta, contexto cambiado y repeticion del cifrado.
+
+Resultado:
+  Archivo original: 504 bytes, SHA-256 bf44989bb5d3fbf02fecfe0e10a0f927139c1503952e7f70512e172230851106
+  Archivo cifrado:  524 bytes, SHA-256 c517964db89bc27eed1c3b1a6af436ff2804c0936d5c208e6ca9920ac002077e (4 de cabecera + datos + 16 de etiqueta GCM)
+  El texto cifrado contiene palabras del original ('control'): False
+  Descifrado con la frase correcta es identico al original: True
+  Un solo bit alterado en el cifrado -> el descifrado falla (etiqueta invalida): True
+  Frase incorrecta -> el descifrado falla: True
+  Datos asociados (AAD) cambiados (proyecto P02) -> falla: True
+  Cifrar dos veces el mismo archivo da resultados distintos (nonce unico): True
+
+Interpretacion: GCM es autenticado: no solo oculta el contenido, sino que detecta cualquier cambio en el texto cifrado o en su contexto. La DEK envuelta puede viajar junto al archivo porque sin la KEK no sirve.
+Limitacion: La seguridad depende de la frase del custodio. En el laboratorio es una cadena ficticia; en produccion la KEK viviria en un servicio de gestion de claves o un modulo de hardware, no en una frase.
+
+02 - SHA-256 antes y despues de una modificacion
+================================================
+
+Objetivo: Mostrar que el hash detecta una alteracion minima y como interpretar la diferencia.
+Datos: datos/informe_P01.txt (informe ficticio) y una copia con un caracter cambiado.
+Procedimiento:
+  1. Se calcula SHA-256 del informe original.
+  2. Se cambia un caracter (la precision 0.82 pasa a 0.92) y se calcula de nuevo.
+  3. Se comparan los dos hashes digito a digito y bit a bit.
+
+Resultado:
+  Original:   491 bytes  SHA-256 d7c1742f8cfd16a4e0272912fa90a09526855fec13263468535b3a6e92138cdd
+  Modificado: 491 bytes  SHA-256 e447b1b1ba50caf598895e06541205811b012be59dac6c041c4f276a5f363f4f
+  Cambio aplicado: un solo caracter ('0.82' -> '0.92'); el tamano no cambia.
+  Digitos hexadecimales distintos: 62 de 64. Bits distintos: 118 de 256 (esperado ~128 por efecto avalancha).
+  Hash recalculado sobre el original sin tocarlo: True (el hash es determinista)
+
+Interpretacion: Los hashes difieren en aproximadamente la mitad de sus bits aunque el cambio sea de un caracter: no se puede saber que o cuanto cambio, solo que cambio. Sirve para detectar modificaciones, no para repararlas.
+Limitacion: Un hash solo es util si se compara con un valor original obtenido por un canal confiable. Si quien modifica el archivo tambien reemplaza el hash publicado, la comparacion no detecta nada (ver evidencia 05).
+
+03 - Firma digital de un informe y su verificacion
+==================================================
+
+Objetivo: Firmar un informe ficticio con la clave privada del director y verificarlo con su clave publica.
+Datos: datos/informe_P01.txt. Par de claves Ed25519 ficticio del usuario director01.
+Procedimiento:
+  1. Se firma el contenido del informe con la clave privada.
+  2. Se verifica la firma con la clave publica y el informe original.
+  3. Se repite la verificacion con el informe alterado y con la clave publica de otra persona.
+
+Resultado:
+  Algoritmo: Ed25519. Firma de 64 bytes (hex: f53d8e3a8cfca51fbdfc2ef84c7d67ca29fd2269995c27f2...)
+  Verificacion con la clave publica de director01 sobre el informe original: True
+  Verificacion sobre el informe con un caracter cambiado: False
+  Verificacion con la clave publica de otra persona: False
+  La clave privada se genero en memoria y no se escribio en evidencias; solo se guardaron la firma y la clave publica.
+
+Interpretacion: La firma solo es valida si el contenido es identico y si la clave publica corresponde a quien firmo: prueba integridad y vincula el documento con quien controla la clave privada.
+Limitacion: La firma prueba que se uso esa clave privada, no que la persona estaba al teclado: si la clave se roba, el firmante puede negar o un tercero puede firmar. Por eso la irrefutabilidad exige custodia de la clave.
+
+04 - Certificado digital: que se valida antes de confiar
+========================================================
+
+Objetivo: Comprobar, con una mini autoridad certificadora ficticia, que informacion de un certificado hay que validar antes de confiar en una firma.
+Datos: CA Atenea ficticia (Ed25519) y certificados emitidos para director01 e investigador07; sin conexion a ninguna autoridad real.
+Procedimiento:
+  1. Se crea una CA autofirmada y se emite un certificado para director01 con uso de firma y no repudio.
+  2. Se validan seis cosas: emisor, vigencia, identidad, uso de clave, que no sea una CA y que no este revocado.
+  3. Se repite la validacion con cinco certificados defectuosos, cada uno con una falla distinta.
+
+Resultado:
+  CA ficticia: CN=CA Atenea (ficticia),O=Centro Atenea de Innovacion (ficticio)
+  Huella SHA-256 de la CA (se entrega por otro canal): 038b0c63c5aad081b02410934d13bb60a71a6fe29f043b67931b5cfa15087b57
+  Certificado de director01: serie 228212607487969796136930164519472220865931969001, vigente 2026-11-23 a 2027-11-24
+  Se valida lo esperado: emitido por la CA de confianza, vigente en la fecha actual, identidad esperada (SAN), uso permitido: firma y no repudio, no es una CA, no aparece en la lista de revocados
+  
+  Certificado correcto: ACEPTADO
+  Certificado vencido: RECHAZADO  (falla: vigente en la fecha actual)
+  Emitido por una CA falsa con el mismo nombre: RECHAZADO  (falla: emitido por la CA de confianza)
+  Certificado de otra persona (investigador07): RECHAZADO  (falla: identidad esperada (SAN))
+  Certificado revocado (en la lista de revocados): RECHAZADO  (falla: no aparece en la lista de revocados)
+  Uso de clave no permitido para firmar: RECHAZADO  (falla: uso permitido: firma y no repudio)
+
+Interpretacion: Un certificado es una afirmacion firmada por una CA: 'esta clave publica pertenece a esta identidad'. Cada caso defectuoso falla en la verificacion que le corresponde; la CA falsa se detecta aunque lleve el mismo nombre, porque la firma del emisor no coincide.
+Limitacion: Solo se probo la revocacion con una lista simulada (no CRL ni OCSP reales) y la huella de la CA debe llegar por un canal distinto al del paquete, porque quien controla la CA controla la confianza.
+
+05 - Un archivo puede conservar su hash y no ser autentico
+==========================================================
+
+Objetivo: Diferenciar integridad tecnica (el hash coincide), autenticidad del emisor (la firma y el certificado) e irrefutabilidad.
+Datos: Paquete con el informe ficticio, su manifiesto SHA256SUMS firmado por director01 y cuatro variantes manipuladas.
+Procedimiento:
+  1. Se firma el manifiesto de hashes (no cada archivo) y se empaqueta junto con el certificado.
+  2. Se construyen cuatro manipulaciones, de la mas simple a la mas elaborada.
+  3. Se aplica el procedimiento completo: certificado, firma sobre el manifiesto y hashes de los archivos.
+
+Resultado:
+  A. Paquete legitimo: hashes=OK | firma=OK | certificado=OK -> ACEPTADO
+  B. Archivo cambiado, manifiesto intacto: hashes=FALLA | firma=OK | certificado=OK -> RECHAZADO
+  C. Archivo y manifiesto de hashes reemplazados: hashes=OK | firma=FALLA | certificado=OK -> RECHAZADO
+  D. Atacante firma con su propia CA falsa: hashes=OK | firma=OK | certificado=FALLA -> RECHAZADO
+  E. Atacante firma con su clave pero reutiliza el certificado real: hashes=OK | firma=FALLA | certificado=OK -> RECHAZADO
+  
+  En C el archivo falso 'pasa' la comprobacion de hash (es consistente con su manifiesto) pero no es autentico.
+  En D la firma es matematicamente valida, pero el certificado no lo emitio la CA de confianza.
+
+Interpretacion: El hash prueba integridad frente a un valor de referencia, pero no dice quien lo produjo. La firma vincula el manifiesto con una clave; el certificado vincula esa clave con una identidad avalada por una CA. Solo con las tres capas el paquete falso queda rechazado en todos los casos.
+Limitacion: El atacante supuesto no tiene la clave privada de director01 ni controla la CA de confianza. Si cualquiera de las dos se compromete, las verificaciones aceptarian el falso.
+
+06 - Gestion de claves: rotacion sin recifrar los datos
+=======================================================
+
+Objetivo: Mostrar que la clave que protege el archivo puede cambiarse sin volver a cifrar los datos y sin guardarla junto a ellos.
+Datos: El archivo cifrado de la evidencia 01 (se cifra de nuevo en memoria) y dos frases ficticias de custodio.
+Procedimiento:
+  1. Se cifra el archivo con una DEK envuelta por la KEK derivada de la frase.
+  2. Se re-envuelve la DEK con una frase nueva.
+  3. Se comprueba que la frase vieja deja de servir, la nueva funciona y el archivo cifrado no cambio.
+
+Resultado:
+  Hash del archivo cifrado antes de la rotacion: d3b8748ee90aefd735284b4a8e27f5739288971f8c02fbb53da7a0ad44e48c42
+  El archivo cifrado no se modifico: hash despues = d3b8748ee90aefd735284b4a8e27f5739288971f8c02fbb53da7a0ad44e48c42 (solo cambian los metadatos).
+  DEK envuelta antes: 2ed59ad78e85bce1bca9ff8a85cccf51...  despues: a20976c2e4544c3aa98fe7f9f15c32f8...
+  Frase anterior ya no descifra: True
+  Frase nueva descifra y recupera el original: True
+  Metadatos guardados junto al archivo contienen la frase o la KEK: False
+
+Interpretacion: La rotacion de la KEK es barata (se re-envuelve una clave de 32 bytes), asi que es viable hacerla al salir un custodio o ante sospecha de exposicion.
+Limitacion: Rotar la KEK no invalida copias de la DEK que ya se hubieran robado: si la DEK se expone, hay que recifrar los datos con una DEK nueva.
+
+07 - Firma de los hashes de los registros de la fase 3
+======================================================
+
+Objetivo: Complementar los hashes de los registros (fase 3) con una firma, de modo que alguien que los reemplace junto con sus hashes sea detectado.
+Datos: evidencias/fase3/hashes_registros.txt y el certificado ficticio de admin01 (administrador tecnologico).
+Procedimiento:
+  1. Se firma la lista de hashes de los CSV con la clave de admin01.
+  2. Se valida su certificado y la firma.
+  3. Se altera el archivo y se verifica de nuevo.
+
+Resultado:
+  Archivo firmado: evidencias/fase3/hashes_registros.txt (428 bytes, SHA-256 75e31ac37258a05030b78f758d05602d0c7d1914aaaac319a8ff7b7012f46073)
+  Certificado de admin01 valido: True
+  Firma valida sobre el archivo original: True
+  Firma valida si se agrega un caracter al archivo: False
+
+Interpretacion: La lista de hashes de la fase 3 prueba que los CSV no cambiaron respecto a esa lista; la firma hace que la lista misma no pueda reemplazarse sin la clave de admin01.
+Limitacion: Es un respaldo de integridad, no prueba de que los registros originales sean veraces: eso depende de cuando y donde se capturaron.
+

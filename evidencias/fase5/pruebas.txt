@@ -1,0 +1,23 @@
+[OK] Cifrado: descifrar devuelve el original
+[OK] Cifrado: el texto cifrado no contiene el contenido
+[OK] Cifrado: un bit alterado se detecta
+[OK] Cifrado: frase incorrecta falla
+[OK] Cifrado: contexto (AAD) distinto falla
+[OK] Cifrado: dos cifrados del mismo archivo difieren
+[OK] Claves: los metadatos no contienen la frase
+[OK] Claves: la rotacion conserva el archivo y cambia la frase
+[OK] Hash: es determinista
+[OK] Hash: un caracter cambia unos 128 bits
+[OK] Firma: la firma del original es valida
+[OK] Paquete legitimo: aceptado
+[OK] Paquete con archivo cambiado: hash lo detecta
+[OK] Archivo y manifiesto reemplazados: hash pasa pero se rechaza
+[OK] Firma con CA falsa: firma valida pero se rechaza
+[OK] Certificado correcto: aceptado
+[OK] Certificado vencido: rechazado
+[OK] Certificado de CA falsa: rechazado
+[OK] Certificado de otra persona: rechazado
+[OK] Certificado revocado: rechazado
+[OK] Certificado sin uso de firma: rechazado
+
+21 de 21 pruebas correctas

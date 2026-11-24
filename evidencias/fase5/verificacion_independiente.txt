@@ -1,0 +1,23 @@
+--- Paquete original ---
+  [OK] la CA coincide con la huella entregada por otro canal
+  [OK] certificado: emitido por la CA de confianza
+  [OK] certificado: vigente en la fecha actual
+  [OK] certificado: identidad esperada (SAN)
+  [OK] certificado: uso permitido: firma y no repudio
+  [OK] certificado: no es una CA
+  [OK] certificado: no aparece en la lista de revocados
+  [OK] firma valida sobre SHA256SUMS
+  [OK] los hashes de los archivos coinciden con SHA256SUMS
+RESULTADO: ACEPTADO
+
+--- Mismo paquete tras cambiar un caracter del informe ---
+  [OK] la CA coincide con la huella entregada por otro canal
+  [OK] certificado: emitido por la CA de confianza
+  [OK] certificado: vigente en la fecha actual
+  [OK] certificado: identidad esperada (SAN)
+  [OK] certificado: uso permitido: firma y no repudio
+  [OK] certificado: no es una CA
+  [OK] certificado: no aparece en la lista de revocados
+  [OK] firma valida sobre SHA256SUMS
+  [FALLA] los hashes de los archivos coinciden con SHA256SUMS
+RESULTADO: RECHAZADO

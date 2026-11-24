@@ -1,0 +1,23 @@
+01 - Cifrado autenticado AES-256-GCM con clave envuelta
+=======================================================
+
+Objetivo: Cifrar un archivo ficticio y demostrar que el descifrado solo funciona con la clave, los datos y el contexto correctos.
+Datos: datos/resultados_P01.csv (12 filas ficticias). Frase del custodio ficticia; no se imprime ni se guarda.
+Procedimiento:
+  1. Se genera una clave de datos (DEK) aleatoria de 256 bits y se cifra el archivo con AES-GCM, ligando el contexto (proyecto y nombre) como dato asociado.
+  2. Se deriva una clave de envoltura (KEK) con scrypt a partir de la frase del custodio y se usa para cifrar la DEK.
+  3. Se guarda el cifrado (.enc) y los metadatos (.json) con la DEK envuelta; la KEK y la frase no se guardan.
+  4. Se intenta descifrar en cinco condiciones: correcta, bit alterado, frase incorrecta, contexto cambiado y repeticion del cifrado.
+
+Resultado:
+  Archivo original: 504 bytes, SHA-256 bf44989bb5d3fbf02fecfe0e10a0f927139c1503952e7f70512e172230851106
+  Archivo cifrado:  524 bytes, SHA-256 c517964db89bc27eed1c3b1a6af436ff2804c0936d5c208e6ca9920ac002077e (4 de cabecera + datos + 16 de etiqueta GCM)
+  El texto cifrado contiene palabras del original ('control'): False
+  Descifrado con la frase correcta es identico al original: True
+  Un solo bit alterado en el cifrado -> el descifrado falla (etiqueta invalida): True
+  Frase incorrecta -> el descifrado falla: True
+  Datos asociados (AAD) cambiados (proyecto P02) -> falla: True
+  Cifrar dos veces el mismo archivo da resultados distintos (nonce unico): True
+
+Interpretacion: GCM es autenticado: no solo oculta el contenido, sino que detecta cualquier cambio en el texto cifrado o en su contexto. La DEK envuelta puede viajar junto al archivo porque sin la KEK no sirve.
+Limitacion: La seguridad depende de la frase del custodio. En el laboratorio es una cadena ficticia; en produccion la KEK viviria en un servicio de gestion de claves o un modulo de hardware, no en una frase.

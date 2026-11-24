@@ -1,0 +1,25 @@
+04 - Certificado digital: que se valida antes de confiar
+========================================================
+
+Objetivo: Comprobar, con una mini autoridad certificadora ficticia, que informacion de un certificado hay que validar antes de confiar en una firma.
+Datos: CA Atenea ficticia (Ed25519) y certificados emitidos para director01 e investigador07; sin conexion a ninguna autoridad real.
+Procedimiento:
+  1. Se crea una CA autofirmada y se emite un certificado para director01 con uso de firma y no repudio.
+  2. Se validan seis cosas: emisor, vigencia, identidad, uso de clave, que no sea una CA y que no este revocado.
+  3. Se repite la validacion con cinco certificados defectuosos, cada uno con una falla distinta.
+
+Resultado:
+  CA ficticia: CN=CA Atenea (ficticia),O=Centro Atenea de Innovacion (ficticio)
+  Huella SHA-256 de la CA (se entrega por otro canal): 038b0c63c5aad081b02410934d13bb60a71a6fe29f043b67931b5cfa15087b57
+  Certificado de director01: serie 228212607487969796136930164519472220865931969001, vigente 2026-11-23 a 2027-11-24
+  Se valida lo esperado: emitido por la CA de confianza, vigente en la fecha actual, identidad esperada (SAN), uso permitido: firma y no repudio, no es una CA, no aparece en la lista de revocados
+  
+  Certificado correcto: ACEPTADO
+  Certificado vencido: RECHAZADO  (falla: vigente en la fecha actual)
+  Emitido por una CA falsa con el mismo nombre: RECHAZADO  (falla: emitido por la CA de confianza)
+  Certificado de otra persona (investigador07): RECHAZADO  (falla: identidad esperada (SAN))
+  Certificado revocado (en la lista de revocados): RECHAZADO  (falla: no aparece en la lista de revocados)
+  Uso de clave no permitido para firmar: RECHAZADO  (falla: uso permitido: firma y no repudio)
+
+Interpretacion: Un certificado es una afirmacion firmada por una CA: 'esta clave publica pertenece a esta identidad'. Cada caso defectuoso falla en la verificacion que le corresponde; la CA falsa se detecta aunque lleve el mismo nombre, porque la firma del emisor no coincide.
+Limitacion: Solo se probo la revocacion con una lista simulada (no CRL ni OCSP reales) y la huella de la CA debe llegar por un canal distinto al del paquete, porque quien controla la CA controla la confianza.

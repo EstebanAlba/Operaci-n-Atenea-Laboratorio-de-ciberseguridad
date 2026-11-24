@@ -1,0 +1,32 @@
+Eventos analizados: 27311 (septiembre como historial, evaluacion en octubre)
+
+Alertas de las reglas calibradas (D1, D2, D3):
+  [MEDIA] 2026-10-09 10:00  D2  investigador03  80 cambios de archivos en 8 min  -> S8
+  [MEDIA] 2026-10-18 20:00  D3d investigador11  31 conexiones a 198.51.100.23 cada 60 s (CV 0.04)  -> S7
+  [MEDIA] 2026-10-22 15:18  D1  investigador05  416 MB en el dia (umbral calibrado 262 MB)  -> S3
+  [ALTA ] 2026-10-25 02:02  D1  investigador15  1500 MB en el dia (umbral calibrado 247 MB)  -> S4
+  [ALTA ] 2026-10-27 15:10  D3c investigador08  comando asociado a ransomware: vssadmin delete shadows /all /quiet  -> S6
+  [ALTA ] 2026-10-27 15:10  D2  investigador08  201 cambios de archivos en 4 min  -> S6
+  [ALTA ] 2026-10-27 15:10  D3a investigador08  200 archivos renombrados a extensiones de cifrado  -> S6
+  [ALTA ] 2026-10-27 15:14  D3b investigador08  nota de rescate creada: P04/datos/LEEME_RESCATE.txt  -> S6
+
+Rafagas esperadas de cuentas de servicio (no generan alerta): 31
+
+Evaluacion por escenario (numero de alertas de cada regla):
+  Esc Tipo        D0 fijo D1 calib  D2  D3  Descripcion
+  S1  legitimo         44        0   0   0  Perfil de descargas grandes habituales (grupo de imagenes P01)
+  S2  legitimo          4        0   0   0  Semana de entrega del proyecto P03: el grupo triplica sus descargas
+  S3  incidente         0        1   0   0  Cuenta de perfil liviano descarga 300 MB de noche
+  S4  incidente         1        1   0   0  Descarga de 1.500 MB de madrugada, en domingo y desde una IP nueva
+  S5  legitimo          0        0   0   0  Copia de seguridad nocturna: 300 archivos en 30 minutos cada noche
+  S6  incidente         0        0   1   3  Ransomware: borrado de copias, 200 archivos cifrados y nota de rescate
+  S7  incidente         0        0   0   1  Conexiones periodicas cada 60 s a un destino externo (beaconing)
+  S8  legitimo          0        0   1   0  Reorganizacion de carpetas: 80 archivos movidos en 8 minutos
+
+Resumen por regla:
+  D0: 50 alertas, 1 sobre incidentes, 49 falsas; incidentes detectados: S4
+  D1: 2 alertas, 2 sobre incidentes, 0 falsas; incidentes detectados: S3, S4
+  D2: 2 alertas, 1 sobre incidentes, 1 falsas; incidentes detectados: S6
+  D3: 4 alertas, 4 sobre incidentes, 0 falsas; incidentes detectados: S6, S7
+
+Las alertas senalan patrones a investigar; no demuestran intencion ni autoria.

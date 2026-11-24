@@ -1,0 +1,9 @@
+id,tipo,descripcion,D0,D1,D2,D3
+S1,legitimo,Perfil de descargas grandes habituales (grupo de imagenes P01),44,0,0,0
+S2,legitimo,Semana de entrega del proyecto P03: el grupo triplica sus descargas,4,0,0,0
+S3,incidente,Cuenta de perfil liviano descarga 300 MB de noche,0,1,0,0
+S4,incidente,"Descarga de 1.500 MB de madrugada, en domingo y desde una IP nueva",1,1,0,0
+S5,legitimo,Copia de seguridad nocturna: 300 archivos en 30 minutos cada noche,0,0,0,0
+S6,incidente,"Ransomware: borrado de copias, 200 archivos cifrados y nota de rescate",0,0,1,3
+S7,incidente,Conexiones periodicas cada 60 s a un destino externo (beaconing),0,0,0,1
+S8,legitimo,Reorganizacion de carpetas: 80 archivos movidos en 8 minutos,0,0,1,0

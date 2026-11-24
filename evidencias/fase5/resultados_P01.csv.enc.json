@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "algoritmo": "AES-256-GCM",
+  "kdf": "scrypt n=16384 r=8 p=1",
+  "sal": "32a3716871ac0db3f7020727f2cd1571",
+  "nonce_datos": "65ee7e8a07b9b5b680642b92",
+  "nonce_dek": "4e08a2f3c6f189837a71fe98",
+  "dek_envuelta": "b56b5cc4517a3a253c0cddef7dcda2e3f8dc50f3e4d1a34539b94f90bee2157cb49bc9b1fa8f3a4518fb81011884606e",
+  "aad": "proyecto=P01;archivo=resultados_P01.csv"
+}

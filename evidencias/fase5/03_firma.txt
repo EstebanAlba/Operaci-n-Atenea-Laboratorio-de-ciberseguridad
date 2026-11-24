@@ -1,0 +1,19 @@
+03 - Firma digital de un informe y su verificacion
+==================================================
+
+Objetivo: Firmar un informe ficticio con la clave privada del director y verificarlo con su clave publica.
+Datos: datos/informe_P01.txt. Par de claves Ed25519 ficticio del usuario director01.
+Procedimiento:
+  1. Se firma el contenido del informe con la clave privada.
+  2. Se verifica la firma con la clave publica y el informe original.
+  3. Se repite la verificacion con el informe alterado y con la clave publica de otra persona.
+
+Resultado:
+  Algoritmo: Ed25519. Firma de 64 bytes (hex: f53d8e3a8cfca51fbdfc2ef84c7d67ca29fd2269995c27f2...)
+  Verificacion con la clave publica de director01 sobre el informe original: True
+  Verificacion sobre el informe con un caracter cambiado: False
+  Verificacion con la clave publica de otra persona: False
+  La clave privada se genero en memoria y no se escribio en evidencias; solo se guardaron la firma y la clave publica.
+
+Interpretacion: La firma solo es valida si el contenido es identico y si la clave publica corresponde a quien firmo: prueba integridad y vincula el documento con quien controla la clave privada.
+Limitacion: La firma prueba que se uso esa clave privada, no que la persona estaba al teclado: si la clave se roba, el firmante puede negar o un tercero puede firmar. Por eso la irrefutabilidad exige custodia de la clave.

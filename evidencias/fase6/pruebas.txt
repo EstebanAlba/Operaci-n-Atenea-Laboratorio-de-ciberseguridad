@@ -1,0 +1,19 @@
+[OK] El generador es reproducible: dos ejecuciones dan el mismo SHA-256
+[OK] El umbral fijo produce 40 o mas falsos positivos en el perfil de descargas grandes (S1)
+[OK] La linea base calibrada no alerta sobre el perfil de descargas grandes (S1)
+[OK] El calendario de entregas evita alertas en la semana de entrega de P03 (S2)
+[OK] El umbral fijo NO detecta la descarga nocturna de 300 MB de una cuenta liviana (S3)
+[OK] La linea base calibrada SI detecta S3
+[OK] Ambas reglas detectan la descarga de 1.500 MB desde una IP nueva (S4)
+[OK] S4 se clasifica con severidad alta (madrugada e IP nueva)
+[OK] La copia de seguridad en su ventana programada no genera alertas de D2 (S5)
+[OK] La reorganizacion legitima activa D2 con severidad media y ninguna senal de malware (S8)
+[OK] Ransomware (S6): extensiones de cifrado, nota de rescate y borrado de copias
+[OK] Ransomware (S6): D2 sube a severidad alta al coincidir con senales de malware
+[OK] Beaconing (S7) detectado por la periodicidad de las conexiones
+[OK] La navegacion web normal no produce alertas de beaconing
+[OK] Las reglas calibradas (D1, D2, D3) detectan los cuatro incidentes
+[OK] Las senales de malware (D3) no tienen falsos positivos
+[OK] Sin calendario de entregas, la regla D1 produce mas alertas en S2
+
+17 de 17 pruebas correctas

@@ -1,0 +1,22 @@
+05 - Un archivo puede conservar su hash y no ser autentico
+==========================================================
+
+Objetivo: Diferenciar integridad tecnica (el hash coincide), autenticidad del emisor (la firma y el certificado) e irrefutabilidad.
+Datos: Paquete con el informe ficticio, su manifiesto SHA256SUMS firmado por director01 y cuatro variantes manipuladas.
+Procedimiento:
+  1. Se firma el manifiesto de hashes (no cada archivo) y se empaqueta junto con el certificado.
+  2. Se construyen cuatro manipulaciones, de la mas simple a la mas elaborada.
+  3. Se aplica el procedimiento completo: certificado, firma sobre el manifiesto y hashes de los archivos.
+
+Resultado:
+  A. Paquete legitimo: hashes=OK | firma=OK | certificado=OK -> ACEPTADO
+  B. Archivo cambiado, manifiesto intacto: hashes=FALLA | firma=OK | certificado=OK -> RECHAZADO
+  C. Archivo y manifiesto de hashes reemplazados: hashes=OK | firma=FALLA | certificado=OK -> RECHAZADO
+  D. Atacante firma con su propia CA falsa: hashes=OK | firma=OK | certificado=FALLA -> RECHAZADO
+  E. Atacante firma con su clave pero reutiliza el certificado real: hashes=OK | firma=FALLA | certificado=OK -> RECHAZADO
+  
+  En C el archivo falso 'pasa' la comprobacion de hash (es consistente con su manifiesto) pero no es autentico.
+  En D la firma es matematicamente valida, pero el certificado no lo emitio la CA de confianza.
+
+Interpretacion: El hash prueba integridad frente a un valor de referencia, pero no dice quien lo produjo. La firma vincula el manifiesto con una clave; el certificado vincula esa clave con una identidad avalada por una CA. Solo con las tres capas el paquete falso queda rechazado en todos los casos.
+Limitacion: El atacante supuesto no tiene la clave privada de director01 ni controla la CA de confianza. Si cualquiera de las dos se compromete, las verificaciones aceptarian el falso.

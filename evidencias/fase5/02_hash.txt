@@ -1,0 +1,19 @@
+02 - SHA-256 antes y despues de una modificacion
+================================================
+
+Objetivo: Mostrar que el hash detecta una alteracion minima y como interpretar la diferencia.
+Datos: datos/informe_P01.txt (informe ficticio) y una copia con un caracter cambiado.
+Procedimiento:
+  1. Se calcula SHA-256 del informe original.
+  2. Se cambia un caracter (la precision 0.82 pasa a 0.92) y se calcula de nuevo.
+  3. Se comparan los dos hashes digito a digito y bit a bit.
+
+Resultado:
+  Original:   491 bytes  SHA-256 d7c1742f8cfd16a4e0272912fa90a09526855fec13263468535b3a6e92138cdd
+  Modificado: 491 bytes  SHA-256 e447b1b1ba50caf598895e06541205811b012be59dac6c041c4f276a5f363f4f
+  Cambio aplicado: un solo caracter ('0.82' -> '0.92'); el tamano no cambia.
+  Digitos hexadecimales distintos: 62 de 64. Bits distintos: 118 de 256 (esperado ~128 por efecto avalancha).
+  Hash recalculado sobre el original sin tocarlo: True (el hash es determinista)
+
+Interpretacion: Los hashes difieren en aproximadamente la mitad de sus bits aunque el cambio sea de un caracter: no se puede saber que o cuanto cambio, solo que cambio. Sirve para detectar modificaciones, no para repararlas.
+Limitacion: Un hash solo es util si se compara con un valor original obtenido por un canal confiable. Si quien modifica el archivo tambien reemplaza el hash publicado, la comparacion no detecta nada (ver evidencia 05).

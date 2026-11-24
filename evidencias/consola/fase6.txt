@@ -1,0 +1,81 @@
+1. Generacion de los registros simulados (semilla fija) y hash antes del analisis
+27311 eventos y 8 escenarios escritos en /evidencias/fase6/registros
+d64165947d1093e4c51e6d6638f595e365db111354b5d5490810d69f2defa859  escenarios.csv
+aa73b0f02677c0a314ec3076b2da4703c2718b76b0e6d33efd969a37d35d866f  registros_simulados.csv
+
+2. Deteccion y evaluacion por escenario
+Eventos analizados: 27311 (septiembre como historial, evaluacion en octubre)
+
+Alertas de las reglas calibradas (D1, D2, D3):
+  [MEDIA] 2026-10-09 10:00  D2  investigador03  80 cambios de archivos en 8 min  -> S8
+  [MEDIA] 2026-10-18 20:00  D3d investigador11  31 conexiones a 198.51.100.23 cada 60 s (CV 0.04)  -> S7
+  [MEDIA] 2026-10-22 15:18  D1  investigador05  416 MB en el dia (umbral calibrado 262 MB)  -> S3
+  [ALTA ] 2026-10-25 02:02  D1  investigador15  1500 MB en el dia (umbral calibrado 247 MB)  -> S4
+  [ALTA ] 2026-10-27 15:10  D3c investigador08  comando asociado a ransomware: vssadmin delete shadows /all /quiet  -> S6
+  [ALTA ] 2026-10-27 15:10  D2  investigador08  201 cambios de archivos en 4 min  -> S6
+  [ALTA ] 2026-10-27 15:10  D3a investigador08  200 archivos renombrados a extensiones de cifrado  -> S6
+  [ALTA ] 2026-10-27 15:14  D3b investigador08  nota de rescate creada: P04/datos/LEEME_RESCATE.txt  -> S6
+
+Rafagas esperadas de cuentas de servicio (no generan alerta): 31
+
+Evaluacion por escenario (numero de alertas de cada regla):
+  Esc Tipo        D0 fijo D1 calib  D2  D3  Descripcion
+  S1  legitimo         44        0   0   0  Perfil de descargas grandes habituales (grupo de imagenes P01)
+  S2  legitimo          4        0   0   0  Semana de entrega del proyecto P03: el grupo triplica sus descargas
+  S3  incidente         0        1   0   0  Cuenta de perfil liviano descarga 300 MB de noche
+  S4  incidente         1        1   0   0  Descarga de 1.500 MB de madrugada, en domingo y desde una IP nueva
+  S5  legitimo          0        0   0   0  Copia de seguridad nocturna: 300 archivos en 30 minutos cada noche
+  S6  incidente         0        0   1   3  Ransomware: borrado de copias, 200 archivos cifrados y nota de rescate
+  S7  incidente         0        0   0   1  Conexiones periodicas cada 60 s a un destino externo (beaconing)
+  S8  legitimo          0        0   1   0  Reorganizacion de carpetas: 80 archivos movidos en 8 minutos
+
+Resumen por regla:
+  D0: 50 alertas, 1 sobre incidentes, 49 falsas; incidentes detectados: S4
+  D1: 2 alertas, 2 sobre incidentes, 0 falsas; incidentes detectados: S3, S4
+  D2: 2 alertas, 1 sobre incidentes, 1 falsas; incidentes detectados: S6
+  D3: 4 alertas, 4 sobre incidentes, 0 falsas; incidentes detectados: S6, S7
+
+Las alertas senalan patrones a investigar; no demuestran intencion ni autoria.
+
+3. Calibracion de la regla de descargas (reto)
+Configuracion                                Alertas  Falsas  Incidentes de descarga detectados (de S3 y S4)
+Umbral fijo de 500 MB (D0)                        50      49  S4
+Linea base, k = 2, con calendario de entregas       8       6  S3, S4
+Linea base, k = 2, sin calendario de entregas      13      11  S3, S4
+Linea base, k = 3, con calendario de entregas       3       1  S3, S4
+Linea base, k = 3, sin calendario de entregas       7       5  S3, S4
+Linea base, k = 4, con calendario de entregas       3       1  S3, S4
+Linea base, k = 4, sin calendario de entregas       7       5  S3, S4
+Linea base, k = 5, con calendario de entregas       2       0  S3, S4
+Linea base, k = 5, sin calendario de entregas       5       3  S3, S4
+Linea base, k = 6, con calendario de entregas       2       0  S3, S4
+Linea base, k = 6, sin calendario de entregas       5       3  S3, S4
+Linea base, k = 8, con calendario de entregas       2       0  S3, S4
+Linea base, k = 8, sin calendario de entregas       3       1  S3, S4
+
+4. Pruebas automaticas
+[OK] El generador es reproducible: dos ejecuciones dan el mismo SHA-256
+[OK] El umbral fijo produce 40 o mas falsos positivos en el perfil de descargas grandes (S1)
+[OK] La linea base calibrada no alerta sobre el perfil de descargas grandes (S1)
+[OK] El calendario de entregas evita alertas en la semana de entrega de P03 (S2)
+[OK] El umbral fijo NO detecta la descarga nocturna de 300 MB de una cuenta liviana (S3)
+[OK] La linea base calibrada SI detecta S3
+[OK] Ambas reglas detectan la descarga de 1.500 MB desde una IP nueva (S4)
+[OK] S4 se clasifica con severidad alta (madrugada e IP nueva)
+[OK] La copia de seguridad en su ventana programada no genera alertas de D2 (S5)
+[OK] La reorganizacion legitima activa D2 con severidad media y ninguna senal de malware (S8)
+[OK] Ransomware (S6): extensiones de cifrado, nota de rescate y borrado de copias
+[OK] Ransomware (S6): D2 sube a severidad alta al coincidir con senales de malware
+[OK] Beaconing (S7) detectado por la periodicidad de las conexiones
+[OK] La navegacion web normal no produce alertas de beaconing
+[OK] Las reglas calibradas (D1, D2, D3) detectan los cuatro incidentes
+[OK] Las senales de malware (D3) no tienen falsos positivos
+[OK] Sin calendario de entregas, la regla D1 produce mas alertas en S2
+
+17 de 17 pruebas correctas
+
+5. Los registros no cambiaron durante el analisis
+escenarios.csv: OK
+registros_simulados.csv: OK
+
+Listo. Resultados y hashes en evidencias/fase6/

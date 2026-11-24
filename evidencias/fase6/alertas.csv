@@ -1,0 +1,90 @@
+regla,severidad,sujeto,inicio,fin,eventos,resumen,motivos,escenario
+D0,media,investigador12,2026-10-01T11:06:29-05:00,2026-10-01T17:08:40-05:00,4,1007 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-01T16:40:29-05:00,2026-10-01T16:40:29-05:00,1,796 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-02T09:58:50-05:00,2026-10-02T13:43:51-05:00,4,998 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-02T11:34:14-05:00,2026-10-02T17:02:45-05:00,3,896 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-05T10:47:41-05:00,2026-10-05T13:19:06-05:00,2,1268 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-05T11:10:46-05:00,2026-10-05T14:29:59-05:00,4,756 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-06T11:50:12-05:00,2026-10-06T17:31:00-05:00,4,868 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-06T13:42:40-05:00,2026-10-06T17:20:39-05:00,2,738 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-07T12:22:27-05:00,2026-10-07T12:22:27-05:00,1,737 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-07T15:15:18-05:00,2026-10-07T15:15:18-05:00,1,1073 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-08T14:51:18-05:00,2026-10-08T15:57:54-05:00,4,706 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-08T17:31:21-05:00,2026-10-08T17:31:21-05:00,1,1113 MB en el dia (umbral fijo 500 MB),,S1
+D2,media,investigador03,2026-10-09T10:00:00-05:00,2026-10-09T10:07:54-05:00,80,80 cambios de archivos en 8 min,FILE_RENAME,S8
+D0,media,investigador13,2026-10-09T10:40:46-05:00,2026-10-09T17:05:36-05:00,3,923 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-09T12:32:09-05:00,2026-10-09T13:07:32-05:00,2,802 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-12T09:46:23-05:00,2026-10-12T15:34:08-05:00,2,905 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-12T16:31:18-05:00,2026-10-12T16:31:18-05:00,1,827 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-13T10:01:31-05:00,2026-10-13T10:01:31-05:00,1,894 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-13T13:02:45-05:00,2026-10-13T13:02:45-05:00,1,764 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-14T14:13:00-05:00,2026-10-14T14:13:00-05:00,1,955 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-14T16:30:57-05:00,2026-10-14T16:30:57-05:00,1,1165 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-15T09:11:33-05:00,2026-10-15T13:49:10-05:00,4,667 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-15T09:20:58-05:00,2026-10-15T17:08:32-05:00,4,1105 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-16T09:22:56-05:00,2026-10-16T10:54:51-05:00,2,818 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-16T09:48:20-05:00,2026-10-16T17:26:47-05:00,4,1056 MB en el dia (umbral fijo 500 MB),,S1
+D3d,media,investigador11,2026-10-18T20:00:01-05:00,2026-10-18T20:30:01-05:00,31,31 conexiones a 198.51.100.23 cada 60 s (CV 0.04),"equipo EQ-INV11, proceso actualizador.exe",S7
+D0,media,investigador13,2026-10-19T09:02:08-05:00,2026-10-19T12:53:26-05:00,2,1031 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-19T09:11:17-05:00,2026-10-19T12:51:12-05:00,2,1085 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador04,2026-10-19T09:37:02-05:00,2026-10-19T15:31:18-05:00,4,683 MB en el dia (umbral fijo 500 MB),,S2
+D0,media,investigador06,2026-10-19T13:41:16-05:00,2026-10-19T17:21:16-05:00,4,806 MB en el dia (umbral fijo 500 MB),,S2
+D0,media,investigador03,2026-10-19T15:03:58-05:00,2026-10-19T15:03:58-05:00,1,862 MB en el dia (umbral fijo 500 MB),,S2
+D0,media,investigador13,2026-10-20T10:15:39-05:00,2026-10-20T15:47:55-05:00,4,1162 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-20T11:59:40-05:00,2026-10-20T12:00:51-05:00,2,1184 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador03,2026-10-20T12:06:54-05:00,2026-10-20T13:00:15-05:00,4,714 MB en el dia (umbral fijo 500 MB),,S2
+D0,media,investigador12,2026-10-21T10:58:15-05:00,2026-10-21T17:43:12-05:00,4,772 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-21T17:47:50-05:00,2026-10-21T17:47:50-05:00,1,905 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-22T09:06:47-05:00,2026-10-22T15:42:40-05:00,4,1049 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-22T11:16:10-05:00,2026-10-22T13:51:45-05:00,3,940 MB en el dia (umbral fijo 500 MB),,S1
+D1,media,investigador05,2026-10-22T15:18:22-05:00,2026-10-22T23:09:00-05:00,6,416 MB en el dia (umbral calibrado 262 MB),"linea base: mediana 75 MB, MADn 37 MB; 416 MB frente a un umbral de 262 MB; fuera de horario",S3
+D0,media,investigador13,2026-10-23T09:41:14-05:00,2026-10-23T17:35:15-05:00,3,784 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-23T13:34:54-05:00,2026-10-23T13:34:54-05:00,1,944 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador15,2026-10-25T02:02:00-05:00,2026-10-25T02:10:00-05:00,3,1500 MB en el dia (umbral fijo 500 MB),,S4
+D1,alta,investigador15,2026-10-25T02:02:00-05:00,2026-10-25T02:10:00-05:00,3,1500 MB en el dia (umbral calibrado 247 MB),"linea base: mediana 65 MB, MADn 36 MB; 1500 MB frente a un umbral de 247 MB; fuera de horario; IP de origen nueva",S4
+D0,media,investigador12,2026-10-26T09:55:08-05:00,2026-10-26T17:32:18-05:00,4,806 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador04,2026-10-26T12:46:07-05:00,2026-10-26T13:09:20-05:00,2,639 MB en el dia (umbral fijo 500 MB),,
+D0,media,investigador13,2026-10-26T13:31:44-05:00,2026-10-26T14:53:53-05:00,2,688 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-27T11:30:39-05:00,2026-10-27T13:13:55-05:00,3,1157 MB en el dia (umbral fijo 500 MB),,S1
+D3c,alta,investigador08,2026-10-27T15:10:20-05:00,2026-10-27T15:10:20-05:00,1,comando asociado a ransomware: vssadmin delete shadows /all /quiet,equipo EQ-INV08,S6
+D2,alta,investigador08,2026-10-27T15:10:40-05:00,2026-10-27T15:14:05-05:00,201,201 cambios de archivos en 4 min,"FILE_CREATE, FILE_RENAME; coincide con senales de software malicioso",S6
+D3a,alta,investigador08,2026-10-27T15:10:40-05:00,2026-10-27T15:13:59-05:00,200,200 archivos renombrados a extensiones de cifrado,"equipo EQ-INV08, proceso factura_octubre.exe",S6
+D3b,alta,investigador08,2026-10-27T15:14:05-05:00,2026-10-27T15:14:05-05:00,1,nota de rescate creada: P04/datos/LEEME_RESCATE.txt,"equipo EQ-INV08, proceso factura_octubre.exe",S6
+D0,media,investigador13,2026-10-27T15:21:22-05:00,2026-10-27T16:34:43-05:00,2,854 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-28T10:56:33-05:00,2026-10-28T13:52:09-05:00,2,1252 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-28T10:57:41-05:00,2026-10-28T17:03:39-05:00,3,659 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-29T10:08:59-05:00,2026-10-29T16:17:24-05:00,4,1048 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-29T13:28:35-05:00,2026-10-29T13:28:35-05:00,1,868 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador12,2026-10-30T09:18:30-05:00,2026-10-30T17:04:01-05:00,4,868 MB en el dia (umbral fijo 500 MB),,S1
+D0,media,investigador13,2026-10-30T12:19:45-05:00,2026-10-30T16:20:53-05:00,4,1022 MB en el dia (umbral fijo 500 MB),,S1
+D2,esperada,svc_backup,2026-10-01T02:10:00-05:00,2026-10-01T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-02T02:10:00-05:00,2026-10-02T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-03T02:10:00-05:00,2026-10-03T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-04T02:10:00-05:00,2026-10-04T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-05T02:10:00-05:00,2026-10-05T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-06T02:10:00-05:00,2026-10-06T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-07T02:10:00-05:00,2026-10-07T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-08T02:10:00-05:00,2026-10-08T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-09T02:10:00-05:00,2026-10-09T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-10T02:10:00-05:00,2026-10-10T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-11T02:10:00-05:00,2026-10-11T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-12T02:10:00-05:00,2026-10-12T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-13T02:10:00-05:00,2026-10-13T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-14T02:10:00-05:00,2026-10-14T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-15T02:10:00-05:00,2026-10-15T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-16T02:10:00-05:00,2026-10-16T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-17T02:10:00-05:00,2026-10-17T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-18T02:10:00-05:00,2026-10-18T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-19T02:10:00-05:00,2026-10-19T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-20T02:10:00-05:00,2026-10-20T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-21T02:10:00-05:00,2026-10-21T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-22T02:10:00-05:00,2026-10-22T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-23T02:10:00-05:00,2026-10-23T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-24T02:10:00-05:00,2026-10-24T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-25T02:10:00-05:00,2026-10-25T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-26T02:10:00-05:00,2026-10-26T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-27T02:10:00-05:00,2026-10-27T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-28T02:10:00-05:00,2026-10-28T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-29T02:10:00-05:00,2026-10-29T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-30T02:10:00-05:00,2026-10-30T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5
+D2,esperada,svc_backup,2026-10-31T02:10:00-05:00,2026-10-31T02:39:54-05:00,300,300 cambios dentro de la ventana programada,,S5

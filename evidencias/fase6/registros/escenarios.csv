@@ -1,0 +1,9 @@
+id,tipo,descripcion,sujetos,inicio,fin
+S1,legitimo,Perfil de descargas grandes habituales (grupo de imagenes P01),"investigador12,investigador13",2026-10-01T00:00:00-05:00,2026-10-31T23:59:59-05:00
+S2,legitimo,Semana de entrega del proyecto P03: el grupo triplica sus descargas,"investigador03,investigador04,investigador06",2026-10-19T00:00:00-05:00,2026-10-20T23:59:59-05:00
+S3,incidente,Cuenta de perfil liviano descarga 300 MB de noche,investigador05,2026-10-22T23:00:00-05:00,2026-10-22T23:59:59-05:00
+S4,incidente,"Descarga de 1.500 MB de madrugada, en domingo y desde una IP nueva",investigador15,2026-10-25T01:50:00-05:00,2026-10-25T02:30:00-05:00
+S5,legitimo,Copia de seguridad nocturna: 300 archivos en 30 minutos cada noche,svc_backup,2026-10-01T00:00:00-05:00,2026-10-31T23:59:59-05:00
+S6,incidente,"Ransomware: borrado de copias, 200 archivos cifrados y nota de rescate",investigador08,2026-10-27T15:10:00-05:00,2026-10-27T15:20:00-05:00
+S7,incidente,Conexiones periodicas cada 60 s a un destino externo (beaconing),investigador11,2026-10-18T20:00:00-05:00,2026-10-18T20:35:00-05:00
+S8,legitimo,Reorganizacion de carpetas: 80 archivos movidos en 8 minutos,investigador03,2026-10-09T10:00:00-05:00,2026-10-09T10:10:00-05:00

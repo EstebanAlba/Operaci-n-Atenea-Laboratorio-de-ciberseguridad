@@ -1,0 +1,14 @@
+Configuracion                                Alertas  Falsas  Incidentes de descarga detectados (de S3 y S4)
+Umbral fijo de 500 MB (D0)                        50      49  S4
+Linea base, k = 2, con calendario de entregas       8       6  S3, S4
+Linea base, k = 2, sin calendario de entregas      13      11  S3, S4
+Linea base, k = 3, con calendario de entregas       3       1  S3, S4
+Linea base, k = 3, sin calendario de entregas       7       5  S3, S4
+Linea base, k = 4, con calendario de entregas       3       1  S3, S4
+Linea base, k = 4, sin calendario de entregas       7       5  S3, S4
+Linea base, k = 5, con calendario de entregas       2       0  S3, S4
+Linea base, k = 5, sin calendario de entregas       5       3  S3, S4
+Linea base, k = 6, con calendario de entregas       2       0  S3, S4
+Linea base, k = 6, sin calendario de entregas       5       3  S3, S4
+Linea base, k = 8, con calendario de entregas       2       0  S3, S4
+Linea base, k = 8, sin calendario de entregas       3       1  S3, S4

@@ -1,6 +1,6 @@
 # Operación Atenea – Laboratorio de ciberseguridad
 
-Código y evidencias de las fases 2, 3 y 4 del trabajo "Operación Atenea" (Ciberseguridad, Universidad Central).
+Código y evidencias de las fases 2 a 6 del trabajo "Operación Atenea" (Ciberseguridad, Universidad Central).
 El análisis completo está en el informe técnico; este repositorio permite reproducir cada prueba.
 
 | Fase | Qué contiene | Dónde |
@@ -8,7 +8,9 @@ El análisis completo está en el informe técnico; este repositorio permite rep
 | 2. Auditoría ética, fingerprinting y scanning | Laboratorio aislado, escaneos con Nmap, tabla de hallazgos, plan de cierre y ordenamiento externo | `docker-compose.yml`, `docker-compose.cierre.yml`, `repositorio/`, `repositorio-ssh/`, `herramientas/` |
 | 3. Investigación de accesos y anomalías | Analizador de registros en Python con 3 reglas, nivel de confianza y 5 casos de prueba | `herramientas/fase3/` |
 | 4. Seguridad de identidades y aplicaciones | Portal en FastAPI con matriz RBAC, sesiones, MFA, registro sin secretos, 66 pruebas y demostración en vivo | `portal/`, `herramientas/fase4/` |
-| Evidencias | Salidas de cada ejecución con sus hashes SHA-256 | `evidencias/antes`, `evidencias/despues`, `evidencias/fase3`, `evidencias/fase4` |
+| 5. Criptografía y trazabilidad documental | Cifrado AES-256-GCM con clave envuelta, SHA-256, firmas Ed25519, mini CA ficticia, verificación de paquetes y 21 pruebas | `herramientas/fase5/` |
+| 6. Riesgos, malware y controles de detección | Registros simulados con escenarios etiquetados, reglas de descargas anómalas, modificaciones masivas y señales de malware, calibración y 17 pruebas | `herramientas/fase6/` |
+| Evidencias | Salidas de cada ejecución con sus hashes SHA-256 | `evidencias/antes`, `evidencias/despues`, `evidencias/fase3` a `evidencias/fase6` |
 
 Todos los datos, cuentas y contraseñas son ficticios y solo existen dentro del laboratorio.
 
@@ -79,6 +81,23 @@ Evidencias en `evidencias/fase4/`.
 | externo01 | externo | P01 (hasta 31/12/2027) | Externo-01! |
 | externo02 | externo | P02 (venció 31/10/2026) | Externo-02! |
 | admin01 | administrador | – (requiere MFA) | Admin-01! |
+
+## Fase 5 – Criptografía y trazabilidad documental
+```
+docker compose exec auditor sh /herramientas/fase5/correr_fase5.sh
+```
+Cifrado, hash, firma, certificados, rotación de claves, 21 pruebas y verificación independiente del paquete firmado.
+Evidencias en `evidencias/fase5/`. Verificación manual de un paquete:
+```
+docker compose exec auditor python3 /herramientas/fase5/fase5.py verificar /evidencias/fase5/paquete_firmado --esperado director01@atenea.test
+```
+
+## Fase 6 – Riesgos, malware y controles de detección
+```
+docker compose exec auditor sh /herramientas/fase6/correr_fase6.sh
+```
+Genera los registros simulados (semilla fija, siempre el mismo archivo), aplica las reglas de detección, evalúa cada escenario,
+compara el umbral fijo con la línea base calibrada y corre 17 pruebas. Evidencias en `evidencias/fase6/`.
 
 ---
 
